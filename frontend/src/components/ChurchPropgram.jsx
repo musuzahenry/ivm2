@@ -29,7 +29,7 @@ const programs = [
     {
       "title":"Special Programs",
        "items":[
-        
+         {"title":"The Lord's Supper & Foot Washing", "desccription":"Every First Sunday Of The Month", "time":"5:00PM - 7:00PM"},
         {"title":"Youth Meetings", "desccription":"Every Second Sunday Of The Month", "time":"3:00PM - 5:00PM"},
         {"title":"Marriage Meetings", "desccription":"Every Last Sunday Of The Month", "time":"3:00PM - 5:00PM"},
         {"title":"Over Nights", "desccription":"Every Last Friday Of The Month", "time":"9:00PM - 5:00AM"},
@@ -144,7 +144,7 @@ loop={true}
                         
                           item.subitems.map((subitem)=>(
                         <>
-                         <tr><td class="itemSubTitle">{subitem.title}</td></tr>
+                         <tr><td class="itemSubTitle"><b><i>{subitem.title}</i></b></td></tr>
                          <tr><td class="itemTime">{subitem.time}</td></tr>
                         </>
                       ))    

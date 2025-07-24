@@ -1,14 +1,13 @@
-import React, { useEffect, useState} from 'react';
-import axios from 'axios';
-import Spinner from './Spinner';
+import React, { useEffect, useState} from 'react'
+import axios from 'axios'
+import Spinner from './Spinner'
 
 //import utils
-import { baseURL } from '../utils/global_params';
+import { baseURL } from '../utils/global_params'
 
 // Import Swiper React components
-import Slider from './banner/slider';
-import PlayVideo from './banner/PlayVideo';
-import { BeatLoader } from 'react-spinners';
+import Slider from './banner/Slider'
+import PlayVideo from './banner/PlayVideo'
 
 
 function Youtubebanner() {

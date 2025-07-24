@@ -188,6 +188,7 @@ button:hover{
   }
 
 
+
 .swiper-slide-active {
     background: #ffffff;
     display: flex !important;
@@ -339,12 +340,14 @@ button:hover{
    font-weight: bold;
    background-color:#CF9178;
    font-size: 18px;
-   line-height:40px;
+   line-height:30px;
+   padding-bottom: 5px;
  }
+
  .itemDesc{
    font-weight: bold;
    font-style: italic;
-   line-height: 30px;
+   line-height: 25px;
  }
 .itemTime{
    line-height: 30px;
