@@ -1,5 +1,5 @@
 import React, { useState } from 'react' //import react
-import { Link,  useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 
 
@@ -16,6 +16,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+
 
 
 const pagination = {
@@ -35,7 +36,8 @@ const Slider = (props) => {
 
   return (
         <>        
-            <Swiper navigation={true} pagination={pagination} loop={true} modules={[Pagination, Navigation]} className="mySwiper">
+            <Swiper 
+            navigation={true} pagination={pagination} loop={true} modules={[Pagination, Navigation]} className="mySwiper">
 
                 {props.videosobj.map((video) => (
             
@@ -57,7 +59,7 @@ const Slider = (props) => {
 
                     <Link to={`video-page/${video.videoId}`}>
                         <button>
-                          <span className="videoIcon"><FaYoutube /></span> &nbsp;WatchVideo
+                          <span className="videoIcon"><FaYoutube /></span> &nbsp;Watch Video
                        </button>   
                     </Link>
                     

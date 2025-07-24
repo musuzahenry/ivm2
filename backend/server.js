@@ -5,6 +5,8 @@ const cors = require('cors'); // import cors
 const app = express();// initialize our app
 app.use(cors()); // allow communication between back and front end through cors
 
+
+
 //decalsrt port on which back end will run
 const PORT = process.env.PORT
 

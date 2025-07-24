@@ -11,7 +11,7 @@ const router = express.Router();
 
 //load environment vairables
 const API_KEY = process.env.API_KEY
-const CHANNEL_ID = process.env.YOUR_CHANNEL_ID; // e.g., UC_x5XG1OV2P6uZZ5FSM9Ttw (Google Developers)
+const CHANNEL_ID = process.env.CHANNEL_ID; // e.g., UC_x5XG1OV2P6uZZ5FSM9Ttw (Google Developers)
 
 
 
@@ -45,8 +45,6 @@ router.get('/:vids', async (req, res) => {
     //now lets separate live and not live videos
     const liveVideos = [];
     const normalVideos = [];
-
-    
 
     videos.forEach(video => {
         if (video.liveBroadcastContent === "live" || video.liveBroadcastContent === "upcoming") {

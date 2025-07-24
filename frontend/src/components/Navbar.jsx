@@ -1,23 +1,26 @@
-import React from 'react' //import react
+import React, { useState } from 'react' //import react
 import { Link } from 'react-router-dom';
 
 //inport images
 import Logo from "../assets/images/logo.png";
 
 //import icons
-  import { FaSearch } from 'react-icons/fa';
-  import { MdEmail } from 'react-icons/md';
-  import { FaPhoneVolume } from "react-icons/fa6";
+import { FaSearch } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { FaPhoneVolume } from "react-icons/fa6";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 
 
 const Navbar = () => {
 
+//display navigation menu or not
+const [displayMenu, setDisplayMenu] = useState(false)
 /*
 This navmenu constant contains the main menu for our website
 Sub menunus are added are objects inside objects
 */
-
+  
   const links = [
     {
       "label":"Home",
@@ -66,6 +69,7 @@ Sub menunus are added are objects inside objects
 ]
 
 
+
   return (
 
     <div className="Header">
@@ -83,9 +87,46 @@ Sub menunus are added are objects inside objects
         </form>
       </div>
       
-      <div className="logoDiv"><Link to="/"><img src={Logo} alt="logo" /></Link></div>
+      <div className="logoDiv">
+
+        <Link to="/" ><img src={Logo} alt="logo" /></Link>
+        
+        <GiHamburgerMenu className="menuIcon" 
+          onClick={()=> setDisplayMenu(!displayMenu)}
+        />
+        </div>
    
-      <ul className="mainMenu">
+      <ul className="mainMenu wideSreecmenu">
+
+        {
+          links.map((element, key)=>(
+            <>
+           <li>
+            <Link key={key} to={"/"+element.link}><span>{element.label}</span></Link>
+           {element.sublinks && element.sublinks.length>0 &&(
+             <ul className="Subment">
+              {
+                element.sublinks.map((subelement, subkey)=>(
+                   <li key ={subkey} >
+                    <Link key={subkey+subelement.link} to={"/"+subelement.link}>
+                    <span>{subelement.label}</span>
+                    </Link>
+                    </li>
+                ))
+              }
+              
+              </ul>
+
+           )}
+           </li>
+           </>
+          ))
+        }
+
+      </ul>
+
+
+      <ul className="mainMenu mobileMenu" style={{display:  displayMenu ? `block` : `none` }}>
 
         {
           links.map((element, key)=>(
@@ -119,3 +160,5 @@ Sub menunus are added are objects inside objects
 }
 
 export default Navbar
+
+

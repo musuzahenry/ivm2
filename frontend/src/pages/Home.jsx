@@ -1,12 +1,13 @@
 
 
 import Youtubebanner from '../components/Youtubebanner'
-import Churchprogram from '../components/Churchprogram'
-import Activities from '../components/Activities'
+import ChurchPropgram from '../components/ChurchPropgram'
 import YoutubeChannel from '../components/YoutubeChannel'
 import Dailydevotion from '../components/Dailydevotion'
 import Audiosermons from '../components/Audiosermons'
 import Maplocation from '../components/Maplocation'
+import Whatwebelieve from '../components/Whatwebelieve'
+import Footer from '../components/Footer'
 
 
 function Home() {
@@ -15,10 +16,8 @@ function Home() {
   return (
     <>
     <Youtubebanner /> 
-    <Activities />
-    <Dailydevotion />
-    <Churchprogram />
-    <YoutubeChannel />
+     <Whatwebelieve />
+    <ChurchPropgram />
     <Audiosermons/>
     <Maplocation />
     </>
