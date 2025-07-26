@@ -19,7 +19,6 @@ function Youtubebanner() {
   const [liveVideos, setLiveVideos] = useState([]);
   const [normalVideos, setNormalVideos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
  
   
@@ -28,7 +27,8 @@ function Youtubebanner() {
     
     const fetchVideos = async()=>{
       try{
-        const response = await axios.get(`${baseURL}:3000/api/videos/${vids}`); // Assuming you want 10 videos
+        const response = await axios.get('/api/videos/12')//for deployment
+        //const response = await axios.get(`${baseURL}:3000/api/videos/${vids}`); // Assuming you want 10 videos
         setLiveVideos(response.data.liveVideos)
         setNormalVideos(response.data.normalVideos); 
         //alert("hh")
