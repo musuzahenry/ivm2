@@ -104,7 +104,7 @@ loop={true}
     },
     // For screens >= 1180px (if you need more than 3 on very wide screens)
      1180: {
-       slidesPerView: 4,
+       slidesPerView: 3,
        spaceBetween: 50,
      },
   }}

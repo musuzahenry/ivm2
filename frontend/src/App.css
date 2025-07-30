@@ -9,6 +9,10 @@
    padding: 0 50px;
 } 
 
+li{
+   display: flex;
+   align-items: stretch;
+  }
 
 .underline{
    width:100%;
@@ -287,7 +291,7 @@ button:hover{
   }
 
 /* front page live video */
-.playVideo{border-radius: 20px;  margin-bottom: 50px; overflow: hidden;}
+.playVideo{border-radius: 20px;  margin-bottom: 80px; overflow: hidden;}
 .liveVid{text-align: center; color:white; background-color: red !important;}
 
 

@@ -16,6 +16,7 @@ const Navbar = () => {
 
 //display navigation menu or not
 const [displayMenu, setDisplayMenu] = useState(false)
+const [displaySubMenu, setDisplaySubMenu] = useState(false)
 /*
 This navmenu constant contains the main menu for our website
 Sub menunus are added are objects inside objects
@@ -24,7 +25,7 @@ Sub menunus are added are objects inside objects
   const links = [
     {
       "label":"Home",
-       "link":"/"
+       "link":""
     }, 
     {
       "label":"Live Stream",
@@ -102,13 +103,23 @@ Sub menunus are added are objects inside objects
           links.map((element, key)=>(
             <>
            <li>
-            <Link key={key} to={"/"+element.link}><span>{element.label}</span></Link>
-           {element.sublinks && element.sublinks.length>0 &&(
+            <Link 
+              onClick = { () =>setDisplaySubMenu(!displaySubMenu) }
+              key={key} to={"/"+element.link}><span>{element.label}</span>
+            </Link>
+            {// display sumenu only if displaysubmene us true onclick
+            displaySubMenu && element.sublinks && element.sublinks.length>0 &&(
              <ul className="Subment">
               {
                 element.sublinks.map((subelement, subkey)=>(
+                  
                    <li key ={subkey} >
-                    <Link key={subkey+subelement.link} to={"/"+subelement.link}>
+                    <Link 
+                      onClick = {() =>setDisplaySubMenu(!displaySubMenu) }
+                      key={subkey+subelement.link
+
+                      } 
+                      to={"/"+subelement.link}>
                     <span>{subelement.label}</span>
                     </Link>
                     </li>
@@ -132,14 +143,21 @@ Sub menunus are added are objects inside objects
           links.map((element, key)=>(
             <>
            <li>
-            <Link key={key} to={"/"+element.link}><span>{element.label}</span></Link>
-           {element.sublinks && element.sublinks.length>0 &&(
+            <Link 
+              key={key} 
+              onClick = {() =>setDisplaySubMenu(!displaySubMenu) }
+              to={"/"+element.link}><span>{element.label}</span>
+            </Link>
+           {// display sumenu only if displaysubmene us true onclick
+           displaySubMenu && element.sublinks && element.sublinks.length>0 &&(
              <ul className="Subment">
               {
                 element.sublinks.map((subelement, subkey)=>(
                    <li key ={subkey} >
-                    <Link key={subkey+subelement.link} to={"/"+subelement.link}>
-                    <span>{subelement.label}</span>
+                    <Link 
+                       onClick = {() =>setDisplaySubMenu(!displaySubMenu) }
+                       key={subkey+subelement.link} to={"/"+subelement.link}>
+                       <span>{subelement.label}</span>
                     </Link>
                     </li>
                 ))
