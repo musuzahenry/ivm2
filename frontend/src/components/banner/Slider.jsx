@@ -35,7 +35,7 @@ const Slider = (props) => {
     }
 
   return (
-        <>        
+        <div className="SliderDiv">        
             <Swiper 
             navigation={true} pagination={pagination} loop={true} modules={[Pagination, Navigation]} className="mySwiper">
 
@@ -71,7 +71,7 @@ const Slider = (props) => {
                 </>
             ))}
             </Swiper> 
-    </>
+    </div>
   )
 }
 

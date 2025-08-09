@@ -41,6 +41,12 @@ Sub menunus are added are objects inside objects
       "label":"What We Believe",
        "link":"what-we-believe"
     },
+
+    {
+      "label":"Radio Programs",
+       "link":"radio-programs"
+    },
+
     {
       "label":"Media",
        "link":"media",
@@ -77,18 +83,8 @@ Sub menunus are added are objects inside objects
 
       <>
       <div className='topDiv'>
-        <p className='email'>
-          <MdEmail /> &nbsp;info@innerveilministries.org
-          &nbsp; &nbsp; <FaPhoneVolume /> &nbsp;+256 772 882224
-        </p>
 
-        <form mehod='post'>
-          <input type='text' name='search' placeholder='Search...' />
-          <button type="submit"><FaSearch /></button>
-        </form>
-      </div>
-      
-      <div className="logoDiv">
+              <div className="logoDiv">
 
         <Link to="/" ><img src={Logo} alt="logo" /></Link>
         
@@ -96,6 +92,20 @@ Sub menunus are added are objects inside objects
           onClick={()=> setDisplayMenu(!displayMenu)}
         />
         </div>
+
+        <p className='email'>
+          <MdEmail /> &nbsp;info@innerveilministries.org
+          &nbsp; &nbsp; <FaPhoneVolume /> &nbsp;+256 772 882224
+        </p>
+
+        <form method='post'className='topSerach'>
+          <input type='text' name='search' placeholder='Search...' />
+          <button type="submit"><FaSearch /></button>
+        </form>
+      
+      </div>
+      
+
    
       <ul className="mainMenu wideSreecmenu">
 
@@ -103,10 +113,15 @@ Sub menunus are added are objects inside objects
           links.map((element, key)=>(
             <>
            <li>
+
             <Link 
-              onClick = { () =>setDisplaySubMenu(!displaySubMenu) }
-              key={key} to={"/"+element.link}><span>{element.label}</span>
+              key={key}
+              onClick = { () =>{
+                setDisplaySubMenu(!displaySubMenu);
+              } }    
+              to={"/"+element.link}><span>{element.label}</span>
             </Link>
+
             {// display sumenu only if displaysubmene us true onclick
             displaySubMenu && element.sublinks && element.sublinks.length>0 &&(
              <ul className="Subment">
@@ -115,7 +130,10 @@ Sub menunus are added are objects inside objects
                   
                    <li key ={subkey} >
                     <Link 
-                      onClick = {() =>setDisplaySubMenu(!displaySubMenu) }
+                      onClick = {() =>{
+                        setDisplaySubMenu(!displaySubMenu);
+                      }
+                    }
                       key={subkey+subelement.link
 
                       } 
@@ -144,8 +162,12 @@ Sub menunus are added are objects inside objects
             <>
            <li>
             <Link 
-              key={key} 
-              onClick = {() =>setDisplaySubMenu(!displaySubMenu) }
+                key={key} 
+                onClick = {() =>{
+                setDisplaySubMenu(!displaySubMenu);
+                setDisplayMenu(!displayMenu);
+              }
+            }
               to={"/"+element.link}><span>{element.label}</span>
             </Link>
            {// display sumenu only if displaysubmene us true onclick
@@ -155,7 +177,11 @@ Sub menunus are added are objects inside objects
                 element.sublinks.map((subelement, subkey)=>(
                    <li key ={subkey} >
                     <Link 
-                       onClick = {() =>setDisplaySubMenu(!displaySubMenu) }
+                        onClick = {() =>{
+                        setDisplaySubMenu(!displaySubMenu);
+                        setDisplayMenu(!displayMenu); 
+                      }
+                    }
                        key={subkey+subelement.link} to={"/"+subelement.link}>
                        <span>{subelement.label}</span>
                     </Link>

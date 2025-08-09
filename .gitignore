@@ -26,3 +26,7 @@ dist-ssr
 
 #nvironment files
 .env
+
+#pytho folders and virtual env
+__pycache__
+venv

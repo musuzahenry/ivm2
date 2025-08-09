@@ -2,7 +2,6 @@
 
 import Youtubebanner from '../components/Youtubebanner'
 import ChurchPropgram from '../components/ChurchPropgram'
-import YoutubeChannel from '../components/YoutubeChannel'
 import Dailydevotion from '../components/Dailydevotion'
 import Audiosermons from '../components/Audiosermons'
 import Maplocation from '../components/Maplocation'

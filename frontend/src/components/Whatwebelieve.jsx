@@ -9,6 +9,8 @@ import { FaAnglesRight } from "react-icons/fa6";
 
 const Whatwebelieve = () => {
   return (
+
+    
     <div className="wwb wrapper">   
         <div className="wwbContent">
         <div className='wwbImg'>
