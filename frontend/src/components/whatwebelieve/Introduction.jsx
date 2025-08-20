@@ -2,7 +2,8 @@ import React from 'react'
 
 //import images
 import JesusChrist from "../../assets/images/JesusChrist.jpg"
-import LogCabin from "../../assets/images/LogCabin.jpg"
+//import LogCabin from "../../assets/images/LogCabin.jpg"
+import BelieveImg from "../../assets/images/WhatWeBelieve.jpg"
 
 
 
@@ -10,7 +11,7 @@ import LogCabin from "../../assets/images/LogCabin.jpg"
 const Introduction = () => {
   return (
       <>
-        <div className="w-100 PageHeading" style={{ backgroundImage: `url(${LogCabin})` }} >
+        <div className="w-100 PageHeading" style={{ backgroundImage: `url(${BelieveImg})` }} >
 
           <div class="OverLay">
             <h1>What We Believe</h1>

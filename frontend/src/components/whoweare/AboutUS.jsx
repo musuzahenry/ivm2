@@ -12,7 +12,7 @@ const AboutUS = () => {
         <div className="w-100 PageHeading" style={{ backgroundImage: `url(${GroupPhoto})` }} >
 
         <div class="OverLay">
-            <h1>About Us</h1>
+            <h1>Who We Are</h1>
           </div>
         </div>
 

@@ -1,8 +1,6 @@
 import React, { useState } from 'react' //import react
 import { Link} from 'react-router-dom';
 
-
-
 //inport images
 import shadow from "../../assets/images/shadow.png";
 
@@ -12,10 +10,14 @@ import { FaYoutube } from "react-icons/fa";
 // swiper js import required modules
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
+
+
 //Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/free-mode';
+import 'swiper/css/thumbs';
 
 
 
@@ -29,13 +31,15 @@ const pagination = {
 
 const Slider = (props) => {
     
-    { console.log(props.videosobj)
+    { 
+    //console.log(props.videosobj)
      //This component receives an object containing a given number of youtube videos which it then dispalces
      //as a slider in the websites banner area
     }
 
   return (
-        <div className="SliderDiv">        
+        <div className="SliderDiv" style={{ /* backgroundImage: `url(${Bkg})`, backgroundSize: '130% 100%'  */ }}>     
+
             <Swiper 
             navigation={true} pagination={pagination} loop={true} modules={[Pagination, Navigation]} className="mySwiper">
 

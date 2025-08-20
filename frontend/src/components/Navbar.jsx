@@ -116,9 +116,13 @@ Sub menunus are added are objects inside objects
 
             <Link 
               key={key}
-              onClick = { () =>{
-                setDisplaySubMenu(!displaySubMenu);
-              } }    
+              onClick = { (e) =>{
+
+                setDisplaySubMenu(!displaySubMenu)
+                element.sublinks && element.sublinks.length>0 &&  e.preventDefault()               
+              } 
+            
+            }    
               to={"/"+element.link}><span>{element.label}</span>
             </Link>
 
@@ -163,10 +167,12 @@ Sub menunus are added are objects inside objects
            <li>
             <Link 
                 key={key} 
-                onClick = {() =>{
+                onClick = {(e) =>{
                 setDisplaySubMenu(!displaySubMenu);
-                setDisplayMenu(!displayMenu);
-              }
+                
+                element.sublinks && element.sublinks.length>0 ?  
+                        e.preventDefault() : setDisplayMenu(!displayMenu);
+                }
             }
               to={"/"+element.link}><span>{element.label}</span>
             </Link>
@@ -179,7 +185,6 @@ Sub menunus are added are objects inside objects
                     <Link 
                         onClick = {() =>{
                         setDisplaySubMenu(!displaySubMenu);
-                        setDisplayMenu(!displayMenu); 
                       }
                     }
                        key={subkey+subelement.link} to={"/"+subelement.link}>

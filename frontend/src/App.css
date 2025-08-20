@@ -13,8 +13,12 @@ li{
    align-items: stretch;
   }
 
-p{
+p, h2, h3{
    text-align: justify !important;
+}
+
+.swiper p, .swiper h1, .swiper h2, .swiper h3{
+    text-align: center !important;
 }
 
 .spacer{
@@ -197,18 +201,22 @@ button:hover{
     width: 100%; 
     display: flex; 
     margin-bottom: 100px;
-    margin-top: 40px;
   }
 
 
-.SliderDiv{
-margin-bottom: -150px;
 
+.SliderDiv{
+       padding-top: 20px;
+        margin-bottom: -150px;
 }
 
 
+.SliderDiv img {
+   opacity: 1;
+   transform: rotate(-180deg) scale(0.8);
+}
+
 .swiper-slide-active {
-    background: #ffffff;
     display: flex !important;
     align-items: center;
     width:100%;
@@ -303,7 +311,8 @@ margin-bottom: -150px;
      border-radius: 5px; 
      width:60px !important; 
      height: 60px !important; 
-     background-color: rgba(24, 18, 18, 0.1) !important;
+     background-color: #C63233 !important;
+     color:white !important;
   }
 
 /* front page live video */
@@ -321,17 +330,25 @@ margin-bottom: -150px;
    flex-direction: column;
    text-align: center;
    box-shadow: 2px 2px 2px gray;
-   min-height: 350px;
+   min-height: 480px;
+   border:1px solid #ecded8;
+   padding: 50px 15px;
+   border-radius: 10%;
+   
+}
+
+.swiper-wrapper > .swiper-slide{
+   margin-top: 20px;
 }
 
 .programDiv h1{
    width:100%;
-   font-size:25px !important;
+   font-size:30px !important;
    line-height: 55px !important;
    padding-bottom:20px;
    font-weight: 200;
-   background-color: #C63233;
-   color:white;
+   color: #C63233;
+
    padding: 0 5px;
    text-align: center;
   }
@@ -340,16 +357,17 @@ margin-bottom: -150px;
    width:100%;
    padding: 0px;
    height: 20px;
-   background-color: #C63233;
+   background-color: white;
    display: flex;
    justify-content: center;
    align-items: center;
+   margin-bottom: 20px;
 }
 
 .progUnderline p{
    width:100px !important;
    height: 2px !important;
-   background-color:#ffffff; 
+   background-color:#C63233; 
 }
 .programDiv table{
    width:100%;
@@ -361,7 +379,7 @@ margin-bottom: -150px;
    font-weight: bold;
    background-color:#CF9178;
    font-size: 18px;
-   line-height:30px;
+   line-height:35px;
    padding-bottom: 5px;
  }
 
@@ -371,7 +389,7 @@ margin-bottom: -150px;
    line-height: 25px;
  }
 .itemTime{
-   line-height: 30px;
+   line-height: 35px;
 }
 
 /*chruch program page */
@@ -546,6 +564,8 @@ margin-bottom: -150px;
    height: 450px;
 }
 
+
+
 .madDiv{
    margin-top: 50px;
 }
@@ -578,6 +598,199 @@ flex-wrap: wrap;
 }
 
 
+.footerDiv{
+   width: 100% !important;
+   background-color: black;
+   color:white;   
+   padding-bottom: 0px;
+   display: flex;
+   flex-direction: column;
+   row-gap: 45px;
+}
+
+
+.footerDiv  h2{
+   font-size: 30px;
+   margin: 20px 0;
+}
+
+.footerDiv .FooterColumns {
+   background-color: #632b2b;
+   width:100%;
+   padding: 10px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;  
+   flex-wrap: wrap;
+}
+
+.footerDiv .FooterColumns > div{
+   width:32%;
+   justify-content: flex-start;
+   padding: 30px
+}
+
+.FooterColumns div .SubbsribeForm{
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: center;
+   background-color: rgb(229, 237, 245);
+   height: 40px;
+   color:grey;
+   padding: 4px;
+   border-radius: 4px;
+}
+
+.FooterColumns div form input{
+   width:90%;
+}
+
+
+.FooterColumns div > p{
+   background-color: transparent;
+   line-height: 22px;
+   margin-bottom: 10px;
+}
+
+.FooterColumns div form button{
+   margin-left: 2px !important;
+}
+
+
+.FooterOr{ 
+   margin: 10px 0;
+}
+
+.continueWithGoogle{
+   width:100%;
+   display: flex;  
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.continueWithGoogle a{
+ display: flex;
+ align-items: center;
+ font-weight: bold;
+ background-color:rgb(35, 124, 226);
+ padding: 5px;
+ border-radius: 5px;
+}
+
+.continueWithGoogle > a img{
+   width:40px !important;
+   background-color: white;
+   border-radius: 4px;
+   margin-right: 3px;
+}
+
+
+.whatsAppInputDiv {
+   width:100%;
+   display: flex;
+   align-items: center;
+   margin: 4px 0;
+   padding: 4px;
+   border-radius: 4px;
+   height: 40px;
+   background-color: rgb(229, 237, 245) !important;
+}
+
+.whatsAppInputDiv input{
+   width:100%;
+   min-height: 35px;
+   color:grey;
+}
+
+.linkWhatsAppBtn{
+background-color: #00a93d;
+border: 1px solid #00a93d;
+}
+
+
+.ContactForm {
+   width:100%;
+   padding: 2px;
+   color:grey;
+}
+
+.ContactForm input, .ContactForm textarea{
+   height: 37px;
+   margin: 4px 0;
+   background-color: rgb(229, 237, 245);
+   padding: 3px;
+}
+
+.ContactForm textarea{
+   min-height: 200px;
+   width: 90%;
+}
+
+
+.QuickLinks li a{
+  line-height: 35px;
+  width:100%;
+  border-bottom: 1px solid rgb(229, 237, 245);
+}
+
+.QuickLinks li a:hover{
+   border-style: dashed;
+}
+
+
+.FollowUs li{
+   font-display: flex;
+   background-color: rgba(250,250,250,0.1);
+   align-items: center;
+   margin-top: 4px;
+}
+
+
+
+.FollowUs li:hover{
+   border-bottom: 1px solid white;
+   border-style: dashed;
+}
+
+
+.FollowUs .footer-icon{
+   font-size: 25px;
+   background-color: rgba(250, 250, 250,0.3);
+   padding: 5px;
+   margin-right: 5px;
+}
+
+.FollowUs .footer-icon:hover{
+   border:1px solid white;
+   background-color: transparent;
+}
+
+.FollowUs li a{
+ display: flex;
+ flex-wrap: wrap;
+ font-size: 12px;
+ line-height: 35px;
+}
+
+
+.Copyright{
+   width:100% !important;
+   padding-top: 33px;
+   text-align: center;
+    bottom: 0;
+   display: flex;
+   flex-direction: column;
+   row-gap: 0px;
+   margin-top: -100px;
+}
+
+.Copyright >P{
+   background-color: black;
+   padding: 10px;
+   text-align: center !important;
+   justify-content: center;
+   display: flex;
+}
 
 
 
@@ -604,7 +817,7 @@ flex-wrap: wrap;
       }
 
    50% {
-       transform: translateY(-10px);
+       transform: translateY(-5px);
        }
 
      100% {
@@ -620,9 +833,9 @@ flex-wrap: wrap;
       }
 
    50% {
-       width:70%;
-       opacity: 0.7;
-       margin-left: 15%;
+       width:95%;
+       opacity: 0.9;
+       margin-left: -5%;
        }
 
      100% {
@@ -725,6 +938,12 @@ flex-wrap: wrap;
       display: none;
    }
 
+
+.SliderDiv{ 
+   padding: -100px;
+   margin-top: -60px;
+}
+
 .swiper-slide-active {
     flex-direction: column;
     flex-wrap: wrap;
@@ -782,10 +1001,13 @@ flex-wrap: wrap;
     height: 30px;
 }
 
-.swiper-pagination {
+.swiper-pagination li {
   position: static !important; 
   margin-top: 10px;
+  height: 100px;
 }
+
+
 
 .playVideo {
    width:100% !important;
@@ -876,11 +1098,14 @@ flex-wrap: wrap;
    background-size: 105% 240px !important;
    background-position-y: 100px;
    margin-bottom: 5px;
+   
 }
 
 .PageHeading h1{ 
    font-size: 50px !important;
    padding: 0px 10px;
+   text-shadow: 0px 2px 2px black;
+   box-shadow: none;
 }
 
 .programPage{
@@ -892,6 +1117,21 @@ flex-wrap: wrap;
    margin: 1%;
 }
 
+
+.footerDiv .FooterColumns > div{
+   width:100%;
+   justify-content: flex-start;
+   padding: 10px;
+
+}
+
+.ContactForm {
+   padding: 0px;
+}
+
+.ContactForm input, .ContactForm textarea{
+   width:100% !important;
+}
 
 
 }

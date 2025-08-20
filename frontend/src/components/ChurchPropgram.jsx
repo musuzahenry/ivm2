@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
@@ -82,11 +83,12 @@ export const ChurchPropgram = () => {
     </div>
 
       <Swiper
-loop={true}
-  modules={[Pagination]}
-  spaceBetween={30}
-  slidesPerView={1} // Start with 1 slide on very small screens (default)
-  breakpoints={{
+   loop={true}
+   navigation = {true}
+   modules={[Pagination, Navigation]}
+   spaceBetween={30}
+   slidesPerView={1} // Start with 1 slide on very small screens (default)
+   breakpoints={{
     // For screens >= 640px
     640: {
       slidesPerView: 1, // Show 2 slides

@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
@@ -94,8 +95,9 @@ const RadioNodeList = () => {
     </div>
 
       <Swiper
-loop={true}
-  modules={[Pagination]}
+  loop={true}
+  navigation={true}
+  modules={[Pagination,  Navigation]}
   spaceBetween={30}
   slidesPerView={1} // Start with 1 slide on very small screens (default)
   breakpoints={{
@@ -121,7 +123,7 @@ loop={true}
      },
   }}
   pagination={pagination} // Corrected pagination prop
-  className="mySwiper"
+  className="mySwiper radioSwipper"
       >
 
         {programs.map((program)=>(
