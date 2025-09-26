@@ -13,7 +13,7 @@ const Introduction = () => {
       <>
         <div className="w-100 PageHeading" style={{ backgroundImage: `url(${BelieveImg})` }} >
 
-          <div class="OverLay">
+          <div className="OverLay">
             <h1>What We Believe</h1>
           </div>
   

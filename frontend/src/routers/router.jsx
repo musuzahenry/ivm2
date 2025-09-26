@@ -1,14 +1,18 @@
 import { createBrowserRouter } from "react-router-dom"
 import App from "../App"
-import Home from "../pages/Home"
+import Home from "../pages/Home/Home"
 import Videopage from "../pages/Videopage"
 import LiveVideo from "../pages/Livevideo"
 import NotFound from "../pages/NotFound"
 import WhoWeAre from "../pages/WhoWeAre"
 import WhatWeBelieve from "../pages/WhatWeBelieve"
 import RadioPrograms from "../pages/RadioPrograms"
-
-
+import ContactUs from "../pages/ContactUs"
+import Sermons from "../pages/Sermons"
+import OurMusic from "../pages/OurMusic"
+import Dailydevotion from "../pages/DialyDevotion"
+import NewsLetter from "../pages/NewsLetter"
+import SevenMajorProphecies from  "../pages/SevenMajorProphecies"
 
 
 const router = createBrowserRouter([
@@ -20,13 +24,18 @@ const router = createBrowserRouter([
             {path: "/video-page/:videoid", element: <Videopage />},
             {path: "/live-stream", element: <LiveVideo />},
             {path: "/who-we-are", element: <WhoWeAre />},
-            { path: "/what-we-believe", element: <WhatWeBelieve />},
-            {path: "/radio-programs", element: <RadioPrograms />},
+            {path: "/what-we-believe",element: <WhatWeBelieve />,},
+            {path: "/radio-programs",element: <RadioPrograms />},
+            {path: "/contact-us", element: <ContactUs />},
+            {path: "/sermons", element: <Sermons />},
+            {path: "/our-music", element: <OurMusic />},
+            {path: "/daily-devotion", element: <Dailydevotion />},
+            {path: "/news-letter", element: <NewsLetter />},
             {path: '*', element: <NotFound />},
+            {path: "seven-major-prophecies", element: <SevenMajorProphecies />},
         ]
     },
 ]);
-
 
 
 

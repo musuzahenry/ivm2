@@ -29,7 +29,7 @@ const Whatwebelieve = () => {
                 The Lord Jesus Christ is the LORD GOD ALMIGHTY and Saviour of all mankind from whom all things have been created and consist. God is currently establishing His Eternal Kingdom here on earth through the preaching of the Infallible Word of God by which whosoever believes and is baptized in Name of Jesus Christ and receives the baptism of the Holy Spirit is born again into the Body of Christ becomes the Bride of Christ.
             </p>
             &nbsp;
-            <Link to="/what-we-believe"><button><span>Read More </span> <FaAnglesRight /> </button></Link>
+            <Link to="/what-we-believe"><button className="btn"><span>Read More </span> <FaAnglesRight /> </button></Link>
         </div>
         </div>
     </div>

@@ -1,8 +1,7 @@
 import React from 'react'
 
-//import custom componetns
-import RadioNodeList from '../components/radioprograms/RadioProgsList'
-
+//import 
+import radioImg from "../assets/images/radioProgram.jpg"
 
 const programs = [
     {
@@ -52,10 +51,27 @@ const RadioPrograms = () => {
   return (
     <>
 
-    <div className="w-100" >
-       <div class="OverLay">
-           <h1>Radio Programs</h1>
-       </div> 
+  { 
+  //add background sermon
+  // style={ /{ backgroundImage: `url(${SermonsImg})` }} 
+  }
+    <div className="w-100 PageHeading"  style={ { backgroundImage: `url(${radioImg})` }} >
+                  <div class="OverLay">
+                       <h1>Radio Programs</h1>
+                  </div> 
+   </div>
+
+
+     <div className="wrapper">
+      <p>
+        The Radio Ministry has greatly sowed the Faith that we have received broadcasting wide and far to invisible audience. 
+        Many have believed the Message of the Hour through the Radio Ministry and many churches opened up or converted to the Message.
+        The Radio Ministry has greatly sowed the Faith that we have received broadcasting wide and far to invisible audience. Many have 
+        believed the Message of the Hour through the Radio Ministry and many churches opened up or converted to the Message.
+      </p>
+      <p>
+        The radio programs have also been possible to continue with support from friends and church members. 
+      </p>
      </div>
 
 

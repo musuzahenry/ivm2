@@ -11,6 +11,16 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+'''
+from dotenv import load_dotenv, find_dotenv
+# SECURITY WARNING: keep the secret key used in production secret!
+load_dotenv(find_dotenv())
+SECRET_KEY = os.environ['SECRET_KEY']
+'''
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +47,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #my apps are below
+    'music',
+    'subscriptions',
 ]
 
 MIDDLEWARE = [
@@ -73,12 +87,18 @@ WSGI_APPLICATION = 'ivm.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+            'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'STORAGE_ENGINE': 'InnoDB',
+            'NAME': 'ivm',
+            'USER': "root",
+            'PASSWORD': "",
+            'HOST': '127.0.0.1',  # Usually localhost for local development
+            'PORT': '3306',  # Default MySQL port
+            'init_command': 'SET storage_engine=INNODB;'
+            ,}
 
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

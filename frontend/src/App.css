@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Shadows+Into+Light&display=swap');
 @import "tailwindcss";
-
 
 
 .wrapper{
@@ -17,8 +15,23 @@ p, h2, h3{
    text-align: justify !important;
 }
 
-.swiper p, .swiper h1, .swiper h2, .swiper h3{
-    text-align: center !important;
+p{
+   font-size: 1rem;
+}
+
+h2{
+   margin-top:50px; 
+   color:#C63233;
+}
+
+
+/*sermon grid and slider */
+.showGrid{
+   display: block;
+}
+
+.showSlider{
+   display: none;
 }
 
 .spacer{
@@ -32,28 +45,35 @@ p, h2, h3{
    margin-top:15px;
    margin-bottom: 15px;
 }
+
 .underline p{
    width:100px !important;
    height: 2px !important;
-   background-color:#C63233; 
+   background-color: skyblue; 
 }
 
 
 button{
-   background-color:#C63233; 
-   border:1px solid #C63233; 
+   background-color:#1799cc; 
+   border:1px solid #1799cc; 
    color:white; 
    cursor: pointer; 
    padding: 5px 7px;
    display: flex;
    flex-direction: row;
+   flex-wrap: nowrap;
    align-items: center;
    border-radius: 0px;
 }
 
+
+.btn{
+   padding: 10px 20px;
+}
+
 button:hover{
-   background-color: #CF9178; 
-   box-shadow: -5px 5px 20px #C63233;
+   background-color: skyblue; 
+   box-shadow: -5px 5px 20px skyblue;
    border:0px;
 }
 
@@ -63,9 +83,8 @@ button:hover{
 /* ================================================== */
 .Header {
    width: 100%; 
-   display: flex;
-   margin-top: 20px;
-   flex-direction: column;
+   position: absolute;
+   z-index: 5000;
 }
 
 .topDiv{
@@ -75,62 +94,16 @@ button:hover{
    width:100% !important;
    padding: 10px;
    margin-bottom: 10px;
-   background-color: rgba(198,50,51,0.1);
-   background-color: rgba(64, 162, 227, 0.3);
-   color:#C63233 !important;
-}
-
-.topDiv .email{
-   width:70%;
-   height: 100% !important;
-   padding-left: 30px;
-   display: flex;
-   justify-content: flex-start;
-   align-items: center;
-   font-weight: bold;
-   font-size: 15px !important;
-   color:gray;
-
-}
-
-.topDiv .email svg{
-   padding: 4px;
-   height: 22px;
-   width: 22px;
-   border-radius: 100%;
-   color: #C63233;
-   border: 1px solid #C63233;
-}
-
-.topDiv form{
-   width:30%; 
-   display: flex;
-   flex-wrap: wrap;
-}
-
-.topDiv form input{
-   height: 35px;
-   box-shadow: 1px 1px 0px #C63233;
-   background-color: rgba(250,180,180,0.1);
-   border-radius: 5px;
-   border:1px solid rgba(250,250,250,0.4);
-   width:90%;
-   padding: 0 4px;
-}
-
-.topDiv form button{
-   padding: 0px 8px;
-   height: 35px;
+   background-color: #1799cc;
+   color:white !important;
 }
 
 
 .logoDiv img{
-   position: absolute; 
-   z-index: 1000;
-   left:20px; 
-   top:70px;
-   width:90px; 
-   cursor: pointer;
+   width: 120px;
+   position: absolute;
+   left:100;
+   top:-5px;
 }
 
 .logoDiv img:hover{
@@ -141,14 +114,14 @@ button:hover{
 
 .mainMenu {
    width:100%; 
+   background-color: rgba(20,20,20,0.5);
+   background-color: rgb(23, 153, 204);
+   border-bottom: 5px solid #C63233;
    display: flex; 
    justify-content: center; 
    padding-right: 30px;
 }
 
-.mobileMenu{
-   display: none; 
-}
 
 .logoDiv .menuIcon{
    display: none;
@@ -162,7 +135,7 @@ button:hover{
 }
 
 .mainMenu >li{
-   border-bottom:  1px solid   #C63233;
+   color: white; 
    margin-left: 10px;
    line-height: 50px;
    position: relative;
@@ -170,6 +143,7 @@ button:hover{
 
 .mainMenu li:hover{
   background-color: #C63233; 
+  border-bottom:  1px solid   #C63233;
   color:white; 
 }
 
@@ -187,41 +161,46 @@ button:hover{
    display: block;
    top:50px;
    z-index: 1000;
-   box-shadow: 2px 2px 2px #C63233;
 }
 
 .mainMenu li:hover > ul li{
-   border-bottom: 1px solid rgba(50,10,10,0.3); 
+   border-bottom: 1px solid skyblue; 
    padding: 0 5px;
 }
 
 
 
-.swiper {
-    width: 100%; 
+/* 
+Swipe JS sliders 
+==================================================================*/
+
+/*sermon slide css */
+
+.swiper {    
     display: flex; 
-    margin-bottom: 100px;
+    width: 100% !important; 
   }
 
 
+.swiper p, .swiper h1, .swiper h2, .swiper h3{
+    text-align: center !important;
+}
 
+
+
+/* 
+sermon slider 
+=============================================================*/
 .SliderDiv{
        padding-top: 20px;
-        margin-bottom: -150px;
 }
 
 
-.SliderDiv img {
-   opacity: 1;
-   transform: rotate(-180deg) scale(0.8);
-}
-
-.swiper-slide-active {
+.SliderDiv .swiper-slide-active {
     display: flex !important;
     align-items: center;
     width:100%;
     flex-direction: row;
-    padding: 30px 5px;
   }
 
 
@@ -237,14 +216,14 @@ button:hover{
 }
 
 
-.sliderCaptions{
+.SliderDiv .sliderCaptions{
    width:39%;
    display: flex;
    flex-direction: column;
    justify-content: center;
 }
 
-.sliderCaptions h1{ 
+.SliderDiv .sliderCaptions h1{ 
    font-size: 35px;
    font-weight: 100; 
    text-align: center;
@@ -252,7 +231,7 @@ button:hover{
    margin-bottom: 10px;
 }
 
-.sliderCaptions p{
+.SliderDiv .sliderCaptions p{
    width:100% !important;
    display: flex;
    justify-content: center;
@@ -289,7 +268,7 @@ button:hover{
      padding:5px;
      width:100% !important;
      box-shadow: 1px 1px 5px black;
-     border-radius: 20px;
+     border-radius: 5px;
      animation: levitate 3s ease-in-out infinite;
   }
 
@@ -311,47 +290,170 @@ button:hover{
      border-radius: 5px; 
      width:60px !important; 
      height: 60px !important; 
-     background-color: #C63233 !important;
-     color:white !important;
+     color: rgb(41, 40, 40) !important;
   }
 
-/* front page live video */
-.playVideo{border-radius: 20px;  margin-bottom: 80px; overflow: hidden;}
 
-.liveVid{text-align: center; color:white; background-color: red !important;}
+
+/* 
+Home banner 
+=======================================================*/
+.homeSlider{
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   height: auto;
+}
+
+
+ .homeSlider .swiper-button-prev, .homeSlider .swiper-button-next{ 
+   color:white !important;
+ }
+
+.homeSliderContent{
+   position: absolute;
+   z-index: 5000;
+   top: 0;
+   width:100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: left;
+   left: 0;
+   padding: 30px 200px;
+   height: 100%;
+   background-color: rgba(0, 7, 10, 0.322);
+}
+
+
+.homeSliderContent a {
+   display: flex;
+   justify-content: center;
+}
+
+.homeSliderContent a button{
+   cursor: pointer;
+   margin-top: 20px;
+}
+
+.homeSliderContent p, .homeSliderContent h2, .homeSliderContent h1, .homeSliderContent h3{
+   text-align: center !important;
+   color:white;
+}
+
+
+
+.homeSliderContent .underline{
+   width:100%;
+   display: flex;
+   justify-content: center;
+}
+
+
+.homeSliderContent .bannerH2 a{
+  font-weight: 100; /* As specified by Google Fonts */
+  font-size:60px;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+
+.homeSliderContent .underline p{
+   background-color: white;
+   height: 1px !important;
+}
+
+
+.homeSliderContent p{
+   font-size: 18px;
+}
+
+/* 
+Home slider animations ============================*/
+
+.swiper-slide-active h2 a{
+  animation:  activeH2 2s ease-in-out 1;
+}
+
+
+.swiper-slide-active .homeSliderContent p {
+  animation:  activeContent 2s ease-in-out 1;
+}
+
+
+.swiper-slide-active .homeSliderContent button {
+  animation:  activeContent 2s ease-in-out 1;
+}
+
+
+.swiper-slide-active .homeSliderContent .underline {
+  animation: activeContent 2s ease-in-out 1;
+}
+
+
+.homeSliderThumbs{
+   margin-top: 0px !important;
+   background-color: rgb(212, 212, 212);
+   display: flex;
+   flex-wrap: nowrap !important;
+}
+
+.homeSliderThumbs img{
+   margin-left: 5px;
+}
+
+.homeSliderThumbs img{
+   margin-left: 5px;
+   cursor: pointer;
+}
+
+
+/* front page live video */
+.playVideo{
+   border-radius: 20px;  
+   margin-bottom: 80px; 
+   overflow: hidden;
+}
+
+.liveVid{
+   text-align: center; 
+   color:white; 
+}
 
 
 /* Church Program 
 -==============================================================
 */
+
+
 .programDiv{
    display: flex;
-   width:99% !important;
+   width:100% !important;
    flex-direction: column;
    text-align: center;
    box-shadow: 2px 2px 2px gray;
-   min-height: 480px;
+   height: 580px !important;
    border:1px solid #ecded8;
    padding: 50px 15px;
-   border-radius: 10%;
+   border-radius: 4%;
    
 }
 
-.swiper-wrapper > .swiper-slide{
-   margin-top: 20px;
-}
 
 .programDiv h1{
    width:100%;
-   font-size:30px !important;
-   line-height: 55px !important;
+   font-size:22px !important;
    padding-bottom:20px;
-   font-weight: 200;
-   color: #C63233;
-
-   padding: 0 5px;
+   font-weight: bold;
+   background-color:#C63233;
+   color: white;
+   padding-top: 20px;
+   width: 100%;
    text-align: center;
+   margin-bottom: 0px;
   }
+  
 
   .progUnderline{
    width:100%;
@@ -367,8 +469,13 @@ button:hover{
 .progUnderline p{
    width:100px !important;
    height: 2px !important;
-   background-color:#C63233; 
+   background-color: skyblue; 
 }
+
+.programP {
+   margin-bottom: 30px;
+}
+
 .programDiv table{
    width:100%;
   }
@@ -377,7 +484,8 @@ button:hover{
 
  .itemTitle{
    font-weight: bold;
-   background-color:#CF9178;
+   background-color: #1799cc;
+   color: white;
    font-size: 18px;
    line-height:35px;
    padding-bottom: 5px;
@@ -514,6 +622,7 @@ button:hover{
    align-items: center;
 }
 
+
 .PageHeading h1{ 
    color:white;
    text-shadow: 5px 5px 5px black;
@@ -550,6 +659,7 @@ button:hover{
    align-content: center;
    justify-content: center;
 }
+
 .wwbImg img{
    width:80% !important;
 }
@@ -566,7 +676,7 @@ button:hover{
 
 
 
-.madDiv{
+.mapDiv{
    margin-top: 50px;
 }
 
@@ -656,6 +766,9 @@ flex-wrap: wrap;
    margin-left: 2px !important;
 }
 
+.FooterColumns h2{
+   color: white;
+}
 
 .FooterOr{ 
    margin: 10px 0;
@@ -793,11 +906,139 @@ border: 1px solid #00a93d;
 }
 
 
+/*
+contactUs
+**************************************
+*/
+.contactUs{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.contactUs table{
+   width: 50%;
+   margin: 0 auto;
+}
+
+.contactLeft{
+   text-align: right;
+   font-weight: bold;
+   width:50%;
+   padding: 10px;
+   padding-right: 5px;
+   border-bottom: 1px solid gray;
+}
+
+.contactRight{
+   width:50%;
+   padding: 10px;
+   text-align: left;
+   padding-left: 5px;
+   border-bottom: 1px solid gray;
+}
+
+.contactLocation{
+   width:100% !important;
+   margin-top: 20px;
+   display: flex;
+   justify-content: center;
+}
+
+/*
+*Sermon grid
+*************************************/
+
+
+.SermonDiv{
+   width:100%;
+   display: flex;
+   flex-wrap: wrap;
+   gap:50px 10px;
+}
+
+.SermonDiv > div{
+   width:24%; 
+   display: flex;
+   flex-direction: column;
+   box-shadow:0px 5px 5px gray;
+   border:1px solid transparent;
+   border-radius: 4px;
+   justify-content: center;
+   text-align: center;
+   padding: 20px 0;   
+}
+
+.gridImg{
+   width:99%;
+}
+
+.sermonGridContent{
+   font-size: 18px;    
+   display: inline-block;
+   width:100% !important;
+   padding: 5px 10px;
+}
+
+.sermonGridContent > a h1{
+   margin: 20px 0px  -15px 0px;
+}
+
+.sermonGridContent a{
+   display: block;
+   width:100% !important;
+   display: flex;
+   justify-content: center;
+}
+
+.accordionNo{
+   font-weight: bold;
+   font-style: italic;
+   border-right: 1px solid black;
+   border-radius: 5px;
+   display: inline-block;
+   width:20px;
+   height: 20px;
+   padding-right: 25px;
+   line-height: 18px;
+}
 
 /*
 *Animations
 =========================================
 */
+@keyframes activeH2{
+      0% {
+        margin-bottom: -100px;  
+        opacity: 0;  
+      }
+
+      80%{
+         opacity: 0.2;
+      }
+
+     100% {
+      margin-bottom: 0px;  
+      opacity: 1; 
+       }
+}
+
+@keyframes activeContent{
+      0% { 
+        opacity: 0;  
+      }
+
+      80%{
+         opacity: 0.2;
+      }
+
+     100% { 
+      opacity: 1; 
+       }
+}
+
+
+
  @keyframes backgroundSlide{
       0% {
       background-size: 110% 110%;     
@@ -835,7 +1076,7 @@ border: 1px solid #00a93d;
    50% {
        width:95%;
        opacity: 0.9;
-       margin-left: -5%;
+       
        }
 
      100% {
@@ -847,7 +1088,18 @@ border: 1px solid #00a93d;
 
 
 
-
+/* The time of the prophet */
+.subcontent{
+   margin: 3px 20px;
+}
+.subcontent li{
+   color: brown;
+   font-style: italic;
+}
+.subcontent li span{
+   font-weight: bold;
+   font-style: normal;
+}
 
 
 @media only screen and (max-width: 1000px) {
@@ -862,6 +1114,7 @@ border: 1px solid #00a93d;
    font-size: 40px;
  }
 
+
  .mainMenu {
    width:100%; 
    display: flex; 
@@ -871,7 +1124,6 @@ border: 1px solid #00a93d;
 }
 
 .logoDiv {
-   width:100%; 
    display: flex;
    flex-direction: row;
    align-items: center;
@@ -879,6 +1131,7 @@ border: 1px solid #00a93d;
    position: static; 
    padding: 0 20px;
 }
+
 .logoDiv a{
    background-color: transparent;
 }
@@ -887,9 +1140,9 @@ border: 1px solid #00a93d;
    display: block;
    visibility: visible;
    font-size: 40px;
-   color:brown;
+   color: white;
    cursor: pointer;
-   border:1px solid brown;
+   border:1px solid white;
    border-radius: 5px;
    padding: 3px;
 }
@@ -907,17 +1160,6 @@ border: 1px solid #00a93d;
 .wideSreecmenu{
    display: none;
 }
-
-
-.logoDiv img{
-   position: static; 
-   z-index: 1000;
-   left:20px; 
-   top:-10px;
-   width:90px; 
-   cursor: pointer;
-}
-
 
    h1{
       font-size: 30px !important;
@@ -944,7 +1186,7 @@ border: 1px solid #00a93d;
    margin-top: -60px;
 }
 
-.swiper-slide-active {
+.SliderDiv .swiper-slide-active {
     flex-direction: column;
     flex-wrap: wrap;
   }
@@ -999,12 +1241,6 @@ border: 1px solid #00a93d;
     align-items: center;  
     width:30px; 
     height: 30px;
-}
-
-.swiper-pagination li {
-  position: static !important; 
-  margin-top: 10px;
-  height: 100px;
 }
 
 
@@ -1083,6 +1319,11 @@ border: 1px solid #00a93d;
    margin: 1%;
 }
 
+/*Sernon grid*/
+.SermonDiv > div{
+   width:32%;
+}
+
 
 }
 
@@ -1091,12 +1332,67 @@ border: 1px solid #00a93d;
 
 @media only screen and (max-width: 764px) {
 
+/* top menu and  logo */
+
+.Header {
+   width: 100%; 
+   position: static;
+   padding: 5px 2px;
+   background-color: #1799cc;
+}
+
+.mainMenu {
+   background-color: #C63233;
+   margin-top: 20px;
+}
+
+.mobileMenu{
+   color:#C63233 !important;
+}
+
+.mobileMenu a{
+   border-bottom: 1px solid white;
+}
+
+.logoDiv img{
+   position: absolute;
+   z-index: 5000;
+   width:70px;
+}
+
+.topDiv{
+   background-color: white;
+}
+
+h2, h3{
+   text-align: center !important;
+}
+
+.underline {
+   display: flex;
+   justify-content: center !important;
+}
+
+.underline p{
+   justify-content: center;
+}
+
+/*sermon grid and slider */
+.showGrid{
+   display: none;
+}
+
+.showSlider{
+   display: block;
+}
+
+/*Pages headin*/
 .PageHeading {
    width:100%;
    height: auto;
    height: 200px;
-   background-size: 105% 240px !important;
-   background-position-y: 100px;
+   background-size: 120% 270px !important;
+   background-position-y: 2px;
    margin-bottom: 5px;
    
 }
@@ -1113,16 +1409,24 @@ border: 1px solid #00a93d;
 }
 
 .programPage .programDiv{
-   width:98% !important;
+   width:100% !important;
    margin: 1%;
 }
 
 
 .footerDiv .FooterColumns > div{
    width:100%;
-   justify-content: flex-start;
    padding: 10px;
+   justify-content: flex-start;
+}
 
+.footerDiv h2{
+   margin-top: -20px;
+   text-align: left !important;
+}
+
+.QuickLinks{
+   margin-bottom: 30px;
 }
 
 .ContactForm {
@@ -1134,5 +1438,51 @@ border: 1px solid #00a93d;
 }
 
 
+.contactUs table{
+   width: 100%;
+   margin: 0 auto;
 }
 
+.wwbImg{
+  margin: 30px 0px -30px 10px !important;
+}
+
+.wwbImg img{
+   width:250px !important;
+}
+
+
+/*Sernon grid*/
+.SermonDiv > div{
+   width:100%;
+}
+
+.homeSliderContent{
+   padding: 30px 10px;
+}
+.homeSliderContent p,  .homeSliderContent h1, .homeSliderContent h3{
+   display: none;
+}
+
+.homeSliderContent h2 a{
+   font-size: 40px !important;
+   margin-bottom: -40px;
+}
+
+
+.homeSliderContent a button{
+   margin: 0px;
+   padding: 7px 10px;
+}
+
+
+.homeSliderThumbs{
+   margin-top: 0px !important;
+   background-color: black;
+   display: flex;
+   flex-wrap: nowrap !important;
+}
+
+
+
+}

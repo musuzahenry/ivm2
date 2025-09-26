@@ -13,7 +13,7 @@ import PlayVideo from './banner/PlayVideo'
 function Youtubebanner() {
 
 
-  const vids = 4 // set number of videos to display on this banner
+  const vids = 8 // set number of videos to display on this banner
 
   //al state variables
   const [liveVideos, setLiveVideos] = useState([]);
@@ -29,6 +29,7 @@ function Youtubebanner() {
       try{
         //const response = await axios.get(`/api/videos/${vids}`)//for deployment
         const response = await axios.get(`${baseURL}:3000/api/videos/${vids}`); //for dev
+        console.log(response.data.liveVideos)
         setLiveVideos(response.data.liveVideos)
         setNormalVideos(response.data.normalVideos); 
         //alert("hh")
@@ -54,14 +55,13 @@ function Youtubebanner() {
     }
         
     {
-    liveVideos.length >0 
-        ? //if we have live videos, just pick the last video
+    liveVideos.length > 0 ? //if we have live videos, just pick the last video
         <>
-          <PlayVideo livevidobj = {liveVideos[liveVideos.length - 1]}/> 
+          <PlayVideo livevidobj = {liveVideos[liveVideos.length - 1]} /> 
         </>
         : //if we dont have any live video, pick the last for vidoes and display them as a slider
         <>
-          <Slider videosobj ={normalVideos}/>
+          <Slider videosobj ={normalVideos} />
           </>
       }
    </>  

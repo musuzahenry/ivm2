@@ -61,97 +61,92 @@ const programs = [
 ]
 
 
-const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + '</span>';
-    },
-  };
 
 
 export const ChurchPropgram = () => {
   return (
-    <div class="wrapper">
+    <div className="wrapper">
     <h2>Church Program</h2>
-    <h3>
-      We have the weekly sunday program, wednesday program, over nights, youth meetings, marriage meetings, and 
-      prayer and fasting meetings
-    </h3>
-            
+    <h3>Below is our weekly prohram</h3>      
     <div className="underline">
       <p></p>
     </div>
 
-      <Swiper
-   loop={true}
-   navigation = {true}
-   modules={[Pagination, Navigation]}
-   spaceBetween={30}
-   slidesPerView={1} // Start with 1 slide on very small screens (default)
-   breakpoints={{
-    // For screens >= 640px
-    640: {
-      slidesPerView: 1, // Show 2 slides
-      spaceBetween: 20,
-    },
-    // For screens >= 768px
-    768: {
-      slidesPerView: 1, // Show 2 slides (as per your current config)
-      spaceBetween: 40,
-    },
-    // For screens >= 1024px
-    1024: {
-      slidesPerView: 3, // Show 3 slides
-      spaceBetween: 50,
-    },
-    // For screens >= 1180px (if you need more than 3 on very wide screens)
-     1180: {
-       slidesPerView: 3,
-       spaceBetween: 50,
-     },
-  }}
-  pagination={pagination} // Corrected pagination prop
-  className="mySwiper"
+    <p className="programP">
+      We have the weekly sunday program, wednesday program, over nights, youth meetings, marriage meetings, and 
+      prayer and fasting meetings
+    </p>
+
+      <Swiper 
+          loop={true}
+          navigation = {true}
+          pagination = {true}
+          modules={[Pagination, Navigation]}
+          spaceBetween={30}
+          slidesPerView={1} // Start with 1 slide on very small screens (default)
+          breakpoints={{
+                  // For screens >= 640px
+                  640: {
+                    slidesPerView: 1, // Show 2 slides
+                    spaceBetween: 20,
+                  },
+                  // For screens >= 768px
+                  768: {
+                    slidesPerView: 1, // Show 2 slides (as per your current config)
+                    spaceBetween: 40,
+                  },
+                  // For screens >= 1024px
+                  1024: {
+                    slidesPerView: 3, // Show 3 slides
+                    spaceBetween: 50,
+                  },
+                  // For screens >= 1180px (if you need more than 3 on very wide screens)
+                  1180: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+        }}
+        className="mySwiper2"
       >
 
-        {programs.map((program)=>(
-            <SwiperSlide>
-              <div class="programDiv">
+        {programs.map((program, key)=>(
+            <SwiperSlide key = {key}>
+              <div className="programDiv">
                 <h1>{program.title}</h1>
-                <div className="progUnderline">
-                <p></p>
-               </div>
-
-                { program.subtitle && <h2>{program.subtitle}</h2> }
+  
+                  { program.subtitle && <h2>{program.subtitle}</h2> }
 
                 {program.items &&
                 (
-                  <div class="proContent">
+                  <div className="proContent">
                  {
-                   program.items.map((item)=>( 
-                    <table>
-                      <tr><td class="itemTitle">{item.title}</td></tr>
+                   program.items.map((item, subkey)=>( 
+                    <table key= {subkey}>
+                      <tbody>
+                      <tr><td className="itemTitle">{item.title}</td></tr>
                       { item.desccription && (
                         <>
-                        <tr><td  class="itemDesc">{item.desccription}</td></tr>
+                        <tr><td  className="itemDesc">{item.desccription}</td></tr>
                         </>
                       )}
                       {
                         item.time &&(
-                          <tr><td class="itemTime">{item.time}</td></tr>
+                          <tr><td className="itemTime">{item.time}</td></tr>
                         )
                       }
                       {
                       item.subitems &&(
                         
-                          item.subitems.map((subitem)=>(
-                        <>
-                         <tr><td class="itemSubTitle"><b><i>{subitem.title}</i></b></td></tr>
-                         <tr><td class="itemTime">{subitem.time}</td></tr>
-                        </>
-                      ))    
+                          item.subitems.map((subitem, subitemkey)=>(
+                        <React.Fragment key={subitemkey}>
+                         <tr><td className="itemSubTitle"><b><i>{subitem.title}</i></b></td></tr>
+                         <tr><td className="itemTime">{subitem.time}</td></tr>
+                        </React.Fragment>
+                      )) 
+
                       )
-                    }             
+                    }   
+                     </tbody>          
                     </table>
                    ))
                   }

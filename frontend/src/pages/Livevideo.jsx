@@ -6,6 +6,8 @@ import PlayVideo from '../components/banner/PlayVideo';
 //import utils
 import { baseURL } from '../utils/global_params';
 
+//import images
+import LiveStream from "../assets/images/liveStream.jpg"
 
 
 function LiveVideo() {
@@ -44,6 +46,13 @@ function LiveVideo() {
 
 
   return ( 
+    <>
+     <div className="w-100 PageHeading" style={{ backgroundImage: `url(${LiveStream})` }} >
+         <div class="OverLay">
+              <h1>Live Stream</h1>
+         </div> 
+     </div>
+
    <div class="wrapper">
      {loading &&
         (
@@ -69,9 +78,8 @@ function LiveVideo() {
       }
       </>
    </div>  
+   </>
   );
-  
-
 }
 
 

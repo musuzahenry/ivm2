@@ -1,8 +1,9 @@
 import React from 'react'
 
+//import components
+import TheTimeLinesOfTheProphet from './TheTimeLinesOfTheProphet'
 
 //import images
-
 import TheProphetImg from "../../assets/images/TheProphet.jpg"
 
 const TheProphet = () => {
@@ -14,7 +15,7 @@ const TheProphet = () => {
                 </div>
       
                 <div className='wwbtext'>
-                    <h2>The Prophet</h2>
+                    <h2>Did you know that God sent us a prophet?</h2>
                     <h3>William Marrion Branham</h3>
                     
                     <div className="underline">
@@ -28,6 +29,8 @@ We believe that the Ministry of Br William Marrion Branham from 1933 to 1965 is 
                 </div>
       
             </div>
+
+            <TheTimeLinesOfTheProphet />
   </div>
   )
 }

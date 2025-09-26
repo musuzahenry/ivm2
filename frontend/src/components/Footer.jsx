@@ -80,16 +80,15 @@ export const Footer = () => {
 
         <h2>Follow Us / Contact Us</h2>
         <ul className="FollowUs">
-          <li><Link to="/"> <MdEmail class="footer-icon" /> innerveilministries@gmail.com </Link></li>
-          <li><Link to="/"><FaPhoneVolume class="footer-icon" /> +256 772 882224 </Link></li>
-          <li><Link to="/"><FaSquareFacebook class="footer-icon" /> @innerveilministries</Link></li>
-          <li><Link to="/"><FaYoutube class="footer-icon" /> @innerveilministries</Link></li>
-          <li><Link to="/"><FaGlobeAfrica class="footer-icon" /> www.innerveilministries.org </Link> </li>
+          <li><Link to="/"> <MdEmail className="footer-icon" /> innerveilministries@gmail.com </Link></li>
+          <li><Link to="/"><FaPhoneVolume className="footer-icon" /> +256 772 882224 </Link></li>
+          <li><a href="http://www.facebook.com/innerveilministries"><FaSquareFacebook className="footer-icon" /> @innerveilministries</a></li>
+          <li><a href="https://www.youtube.com/@innerveilministries"><FaYoutube className="footer-icon" /> @innerveilministries</a></li>
+          <li><Link to="/"><FaGlobeAfrica className="footer-icon" /> www.innerveilministries.org </Link> </li>
         </ul>
 
 
       </div>  
-
 
     </div>
 

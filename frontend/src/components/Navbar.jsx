@@ -1,18 +1,18 @@
 import React, { useState } from 'react' //import react
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 //inport images
 import Logo from "../assets/images/logo.png";
 
 //import icons
-import { FaSearch } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
-import { FaPhoneVolume } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 
 
 const Navbar = () => {
+
+//initiate navigaion variables
+const navigate = useNavigate();
 
 //display navigation menu or not
 const [displayMenu, setDisplayMenu] = useState(false)
@@ -56,8 +56,8 @@ Sub menunus are added are objects inside objects
           "link":"sermons"
             },
             {
-              "label":"Youth Music",
-              "link":"youth-music"
+              "label":"Our Music",
+              "link":"our-music"
             },
             {
               "label":"Daily Devotion",
@@ -81,48 +81,47 @@ Sub menunus are added are objects inside objects
 
     <div className="Header">
 
-      <>
-      <div className='topDiv'>
+      <>  
 
-              <div className="logoDiv">
-
-        <Link to="/" ><img src={Logo} alt="logo" /></Link>
-        
-        <GiHamburgerMenu className="menuIcon" 
-          onClick={()=> setDisplayMenu(!displayMenu)}
-        />
-        </div>
-
-        <p className='email'>
-          <MdEmail /> &nbsp;info@innerveilministries.org
-          &nbsp; &nbsp; <FaPhoneVolume /> &nbsp;+256 772 882224
-        </p>
-
-        <form method='post'className='topSerach'>
-          <input type='text' name='search' placeholder='Search...' />
-          <button type="submit"><FaSearch /></button>
-        </form>
+            <div className="logoDiv">
       
-      </div>
-      
+              <Link to="/" 
+                    onClick = { (e) =>{
+                     e.preventDefault()
+                     //check whether these are true before you navigate
+                     displaySubMenu && setDisplaySubMenu(!displaySubMenu)
+                     displayMenu && setDisplayMenu(!displayMenu) 
+                      navigate("/") 
+                    }   
+                  } 
+                >
+                   <img src={Logo} alt="logo" />
+               </Link>
+              
+              <GiHamburgerMenu className="menuIcon"                      
+                 onClick = { (e) =>{
+                  setDisplaySubMenu(!displaySubMenu)
+                  setDisplayMenu(!displayMenu)
+                  e.preventDefault()               
+                 }   
+                } 
+              />
+              </div>
 
-   
       <ul className="mainMenu wideSreecmenu">
 
         {
           links.map((element, key)=>(
-            <>
-           <li>
+         
+           <li key={key}>
 
-            <Link 
-              key={key}
+            <Link     
               onClick = { (e) =>{
-
                 setDisplaySubMenu(!displaySubMenu)
                 element.sublinks && element.sublinks.length>0 &&  e.preventDefault()               
-              } 
-            
-            }    
+              }     
+            }   
+
               to={"/"+element.link}><span>{element.label}</span>
             </Link>
 
@@ -133,15 +132,12 @@ Sub menunus are added are objects inside objects
                 element.sublinks.map((subelement, subkey)=>(
                   
                    <li key ={subkey} >
-                    <Link 
-                      onClick = {() =>{
+                    <Link onClick = {() =>{
                         setDisplaySubMenu(!displaySubMenu);
                       }
                     }
-                      key={subkey+subelement.link
-
-                      } 
-                      to={"/"+subelement.link}>
+                     
+                     to={"/"+subelement.link}>
                     <span>{subelement.label}</span>
                     </Link>
                     </li>
@@ -152,7 +148,7 @@ Sub menunus are added are objects inside objects
 
            )}
            </li>
-           </>
+           
           ))
         }
 
@@ -163,13 +159,10 @@ Sub menunus are added are objects inside objects
 
         {
           links.map((element, key)=>(
-            <>
-           <li>
-            <Link 
-                key={key} 
+           <li key={key}>
+            <Link   
                 onClick = {(e) =>{
-                setDisplaySubMenu(!displaySubMenu);
-                
+                setDisplaySubMenu(!displaySubMenu);     
                 element.sublinks && element.sublinks.length>0 ?  
                         e.preventDefault() : setDisplayMenu(!displayMenu);
                 }
@@ -184,9 +177,12 @@ Sub menunus are added are objects inside objects
                    <li key ={subkey} >
                     <Link 
                         onClick = {() =>{
-                        setDisplaySubMenu(!displaySubMenu);
+                        // when click sub menu, do the followinf
+                        setDisplaySubMenu(!displaySubMenu); //hide subment
+                        setDisplayMenu(!displayMenu); //then hide main menu
                       }
-                    }
+                    }  
+                       //then do the routing to the desired link
                        key={subkey+subelement.link} to={"/"+subelement.link}>
                        <span>{subelement.label}</span>
                     </Link>
@@ -198,7 +194,6 @@ Sub menunus are added are objects inside objects
 
            )}
            </li>
-           </>
           ))
         }
 
