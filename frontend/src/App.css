@@ -1,0 +1,2060 @@
+.wrapper{
+   /*common padding for all content wrappers except for the ones we want to have full width */
+   padding: 0 40px;
+} 
+
+li{
+   display: flex;
+   align-items: stretch;
+  }
+
+p, h2, h3{
+   text-align: justify !important;
+}
+
+p{
+   font-size: 1rem;
+}
+
+h2{
+   margin-top: 20px; 
+   color:#C63233;
+}
+
+
+/*sermon grid and slider */
+.showGrid{
+   display: block;
+}
+
+.showSlider{
+   display: none;
+}
+
+.spacer{
+   display: block;
+   height: 70px !important;
+}
+
+.underline{
+   width:100%;
+   padding: 0px;
+   margin-top:15px;
+   margin-bottom: 15px;
+}
+
+.underline p{
+   width:100px !important;
+   height: 2px !important;
+   background-color: skyblue; 
+}
+
+
+button{
+   background-color:#1799cc; 
+   border:1px solid #1799cc; 
+   color:white; 
+   cursor: pointer; 
+   padding: 5px 7px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+   border-radius: 0px;
+}
+
+
+.btn{
+   padding: 10px 20px;
+}
+
+button:hover{
+   background-color: rgb(83, 171, 206); 
+   box-shadow: -5px 5px 20px skyblue;
+  
+}
+
+
+
+/* header css */
+/* ================================================== */
+.Header {
+   width: 100%; 
+   position: absolute;
+   z-index: 5000;
+}
+
+.topDiv{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width:100% !important;
+   padding: 10px;
+   margin-bottom: 10px;
+   background-color: #1799cc;
+   color:white !important;
+}
+
+
+.logoDiv img{
+   width: 120px;
+   position: absolute;
+   left:100;
+   top:-5px;
+}
+
+.logoDiv img:hover{
+   border: 0px solid #C63233; 
+   border-radius: 100%; 
+   box-shadow: -3px 5px 10px #C63233;
+}
+
+.mainMenu {
+   width:100%; 
+   background-color: rgba(20,20,20,0.5);
+   background-color: rgb(23, 153, 204);
+   border-bottom: 5px solid #C63233;
+   display: flex; 
+   justify-content: center; 
+   padding-right: 30px;
+}
+
+
+.logoDiv .menuIcon{
+   display: none;
+}
+
+
+.mainMenu li a{
+   padding: 0 15px; 
+   line-height: 50px !important;
+   width:100% !important;
+}
+
+.mainMenu >li{
+   color: white; 
+   margin-left: 10px;
+   line-height: 50px;
+   position: relative;
+}
+
+.mainMenu li:hover{
+  background-color: #C63233; 
+  border-bottom:  1px solid   #C63233;
+  color:white; 
+}
+
+
+
+.mainMenu li > ul{
+ display: none;
+ background-color: white;
+ color: #C63233;
+ min-width:200px;
+}
+
+.mainMenu li:hover > ul{
+   position: absolute;
+   display: block;
+   top:50px;
+   z-index: 1000;
+}
+
+.mainMenu li:hover > ul li{
+   border-bottom: 1px solid skyblue; 
+   padding: 0 5px;
+}
+
+
+
+/* 
+Swipe JS sliders 
+==================================================================*/
+
+/*sermon slide css */
+
+
+.swiper {    
+    display: flex; 
+    width: 100% !important; 
+  }
+
+
+.swiper p, .swiper h1, .swiper h2, .swiper h3{
+    text-align: center !important;
+}
+
+
+
+/* 
+sermon slider 
+=============================================================*/
+.SliderDiv{
+       padding-top: 20px;
+}
+
+
+.SliderDiv .swiper-slide-active {
+    display: flex !important;
+    align-items: center;
+    width:100%;
+    flex-direction: row;
+  }
+
+
+.slider-div {
+   display: flex;
+   flex-direction: row;
+   width:60%;
+   margin-left: 2px;
+   margin-bottom: -120px;
+   flex-direction: column;
+   justify-content: center;
+   padding: 0 20px;
+}
+
+
+.SliderDiv .sliderCaptions{
+   width:39%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.SliderDiv .sliderCaptions h1{ 
+   font-size: 35px;
+   font-weight: 100; 
+   text-align: center;
+   margin-top: 30px;
+   margin-bottom: 10px;
+}
+
+.SliderDiv .sliderCaptions p{
+   width:100% !important;
+   display: flex;
+   justify-content: center;
+   padding-left: 0 35px;
+   margin: 0 10px;
+}
+
+.sliderCaptions button{
+  display: flex; 
+  justify-content: flex-start;
+  margin-top: 10px;  
+  border-radius: 5px;
+  align-items: baseline;
+}
+
+.videoIcon{
+    border:1px solid white; 
+    border-radius: 3px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;  
+    width:30px; 
+    height: 30px;
+}
+
+.sliderCaptions p .date{
+   font-weight: bold;
+}
+
+
+  
+.slider-div .sliderImg { 
+     align-self: flex-start;
+     padding:5px;
+     width:100% !important;
+     box-shadow: 1px 1px 5px black;
+     border-radius: 5px;
+     animation: levitate 3s ease-in-out infinite;
+  }
+
+.slider-div div{
+   width:100% !important;
+   display: block;
+   height: 0px;
+   background-color: transparent;
+}
+
+  .slider-div .shadowImg{  
+   width:100%;
+   height: 40px; 
+   margin-top: 20px;
+   animation: shrinkgrow 3s ease-in-out infinite;
+  }
+
+
+
+
+/* 
+Home banner 
+=======================================================*/
+.homeSlider{
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   height: auto;
+}
+
+
+
+
+
+
+ .homeSlider .swiper-button-prev, .homeSlider .swiper-button-next{ 
+   color:rgb(255, 255, 255) !important;
+ }
+
+.homeSliderContent{
+   position: absolute;
+   z-index: 5000;
+   top: 0;
+   width:100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: left;
+   left: 0;
+   padding: 30px 200px;
+   height: 100%;
+   background-color: rgba(0, 7, 10, 0.322);
+}
+
+
+.homeSliderContent a {
+   display: flex;
+   justify-content: center;
+}
+
+.homeSliderContent a button{
+   cursor: pointer;
+   margin-top: 20px;
+}
+
+.homeSliderContent p, .homeSliderContent h2, .homeSliderContent h1, .homeSliderContent h3{
+   text-align: center !important;
+   color:white;
+}
+
+
+
+.homeSliderContent .underline{
+   width:100%;
+   display: flex;
+   justify-content: center;
+}
+
+
+.homeSliderContent .bannerH2 a{
+  font-weight: 100; /* As specified by Google Fonts */
+  font-size:60px;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+
+.homeSliderContent .underline p{
+   background-color: white;
+   height: 1px !important;
+}
+
+
+.homeSliderContent p{
+   font-size: 18px;
+}
+
+/* 
+Home slider animations ============================*/
+
+.swiper-slide-active h2 a{
+  animation:  activeH2 2s ease-in-out 1;
+}
+
+
+.swiper-slide-active .homeSliderContent p {
+  animation:  activeContent 2s ease-in-out 1;
+}
+
+
+.swiper-slide-active .homeSliderContent button {
+  animation:  activeContent 2s ease-in-out 1;
+}
+
+
+.swiper-slide-active .homeSliderContent .underline {
+  animation: activeContent 2s ease-in-out 1;
+}
+
+
+.homeSliderThumbs{
+   margin-top: 0px !important;
+   background-color: rgb(212, 212, 212);
+   display: flex;
+   flex-wrap: nowrap !important;
+}
+
+.homeSliderThumbs img{
+   margin-left: 5px;
+}
+
+.homeSliderThumbs img{
+   margin-left: 5px;
+   cursor: pointer;
+}
+
+
+/* front page live video */
+.playVideo{
+   border-radius: 20px;  
+   margin-bottom: 30px; 
+   overflow: hidden;
+}
+
+.vidoeDetails{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   padding: 0 200px;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   margin-bottom: 50px;
+}
+
+.vidoeDetails h3{
+   width:100% !important;
+   text-align: center !important;
+}
+
+.vidoeDetails p{
+   width:100% !important;
+   text-align: center !important;
+}
+
+.downLoadLinks{
+   display: flex;
+   width:100%;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 3px;
+   justify-content: center;
+   margin-top: 5px;
+}
+
+.downLoadLinks button{
+    width:250px;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+}
+
+.liveVid{
+   text-align: center; 
+   color:white; 
+}
+
+/* What we beleiev */
+.devotion{
+   background-color: #40A2E3;
+   width:100%;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   color:white;
+   background-position: center;
+   background-repeat: no-repeat;
+   /* This is the key property for the parallax effect */
+   background-attachment: fixed;
+   position: relative;
+   background-size: 100% 100%;
+}
+
+.devotion .devotion-title{
+   color: white !important;
+   text-align: center !important;
+   font-weight: bold;
+   margin-top: 0px !important;
+}
+
+.devotion > div{
+   display: flex;
+   padding:100px 0;
+   flex-direction: column;
+   width:100%;
+   background-color: rgba(0,0,0,0.9);
+}
+
+.devotion >  div > div{
+   width:100% !important;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   text-align: center;
+   align-items: center;
+}
+
+.devotion blockquote{
+   font-size: 1rem;
+   line-height: 1.9rem;
+   padding-right:100px !important;
+   padding-left: 100px !important;
+   display: block;
+   padding-left: 6px;
+}
+
+.quote{
+   display: block;
+   width:50px;
+   opacity: 0.9;
+}
+
+.quote img{
+   display: block;
+   width:50px;
+   opacity: 0.9;
+}
+
+.devotion-heading{
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+}
+
+.daily-devotion-img{
+   width:100% !important;
+   border-radius: 10px;
+}
+
+.btn-crimson{
+   background-color:#C63233;
+   border: 1px solid #C63233;
+}
+
+.btn-crimson:hover{
+   background-color:#cf5b5b;
+   border: 1px solid #cf5b5b;
+   box-shadow: -5px 5px 20px #cf5b5b;
+}
+/* Church Program 
+-==============================================================
+*/
+
+.progDiv{
+   display: flex !important;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap:1%;
+}
+.progDiv > div{
+   align-items: flex-start !important;
+   width:49%; 
+   display: flex;
+   flex-direction: column;
+   border:1px solid black;
+}
+
+.progDiv > div>div{
+   align-items: flex-start;
+   width:100%; 
+}
+
+ .progDiv h3{
+     font-size:30px;
+     text-align: left !important;
+     color: #40A2E3;
+ }
+
+
+.programDiv{
+   display: flex;
+   width:100% !important;
+   flex-direction: column;
+   text-align: center;
+   box-shadow: 2px 2px 2px gray;
+   height: 580px !important;
+   border:1px solid #ecded8;
+   padding: 50px 15px;
+   border-radius: 4%;
+
+   
+}
+
+/* missionary grid */
+.middion-grid{
+   display: flex;
+   width:100% !important;
+   flex-wrap: wrap;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+}
+
+.middion-grid > div {
+   width:33%;
+}
+
+.middion-grid > div > div{
+   width:100%;
+   display: flex;
+   flex-direction: column;
+   text-align: center !important;
+   justify-content: center;
+   align-items: center;
+   padding-bottom: 50px;
+   box-shadow: 2px 2px 2px gray;
+}
+
+.mission-body{
+   padding-left: 100px;
+   padding-right: 100px;
+}
+
+.mission-t{
+   border-bottom: 1px solid gray;
+   margin:10px 0;
+   line-height: 38px ;
+}
+.mission-p{
+   text-align: center !important;
+}
+.mission-btn{
+   width:150px;
+   display: flex;
+   justify-content: center;
+   margin-top: 10px;
+}
+.mission-images{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-top: 40px 0;
+   margin-bottom: 30px;
+   gap:2px;
+}
+
+.mission-images img{
+     width:33%;
+     padding:10px;
+     border-radius: 20px;
+     border:1px solid rgb(216, 213, 213);
+}
+
+
+
+
+/*news letter */
+#newsletter{
+   background-color: brown;
+   color:white;
+   display: flex;
+   flex-wrap: wrap;
+   padding: 20px ;
+}
+
+
+.letterH3Home{
+   width:100%;
+   color:white;
+   text-align:right !important;
+   text-transform: uppercase;
+   font-size: 15px;
+}
+/* letterTitleDiv letterButtonDiv */
+.newsletter .letterTitleDiv{
+   width: 70%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-items: right;
+}
+
+
+.newsletter .letterButtonDiv{
+   width: 30%;
+   display: flex;
+   justify-content: flex-start;
+   padding-left: 20px;
+   align-items: center;
+}
+
+.newsletter button{
+   background-color: transparent;
+   border: 1px solid white;
+   width:250px;
+   display: flex;
+   justify-content: center;
+   text-align: center !important;
+   padding: 15px !important;
+}
+
+.newsletter button{
+   border: 1px solid rgba(250,250,250,0.7) !important;
+}
+
+
+
+/* News Letter Page 
+============================================== */
+.letterview{
+   display: flex; 
+   width: 100%;
+   margin: 20px auto;
+}
+
+.letterview > div{
+   display: flex;
+   flex-wrap: wrap;
+   width:100%;
+   padding: 10px;
+   align-items: center;
+
+}
+
+.letterview > div >div{
+   padding: 5px;
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.letterview > div > div > div{
+   width:100%;
+}
+
+.letterview:nth-child(odd){
+   background-color: rgb(223, 221, 221);
+   border: 1px solid rgb(223, 221, 221);
+}
+.letterview:nth-child(even){
+   background-color: white;
+   border: 1px solid rgb(223, 221, 221);
+}
+
+.letterTitle{
+   font-weight: bold;
+   background-color: #b7ccd4;
+   padding:10px 0;
+   line-height: 25px;
+}
+.letterTitle h4{
+   line-height: 25px;
+}
+
+.letterThumb{
+   width:10% !important;
+}
+
+.letterThumbImg{
+   border:1px solid rgb(143, 143, 143);
+   border-radius: 5px;
+}
+
+.letterThumb img{
+   border-radius:5px !important;
+   padding: 7px !important;
+}
+
+.letterContent{
+   width:90% !important;
+   padding-top: 0px !important;
+   padding-left: 0px !important;
+   border: 1px solid  #b7ccd4;
+}
+
+.letterExcerpt{
+   padding-left: 5px !important;
+   padding-top:6px !important;
+}
+.letterDate, .letterLink{
+   margin-left: 5px;
+}
+.letterDate{
+   margin-bottom: -15px;
+}
+.letterLink{
+   margin-top: 0px;
+}
+
+
+ /* color:#CF9178; itemTitle, itemDesc, itemTime */
+
+ .itemTitle{
+   font-weight: bold;
+   background-color: #1799cc;
+   color: white;
+   font-size: 18px;
+   line-height:35px;
+   padding-bottom: 5px;
+ }
+
+ .itemDesc{
+   font-weight: bold;
+   font-style: italic;
+   line-height: 25px;
+ }
+.itemTime{
+   line-height: 35px;
+}
+
+/*chruch program page */
+.programPage{
+   display: flex;   
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.programPage .programDiv{
+   width:40% !important;
+   margin: 1%;
+}
+
+/* Home YouTube Banner ideos */
+
+.playVideo{
+   width: 1000px;
+   display: flex;
+   border: 1px solid black !important;
+   justify-self: center;
+   margin-top: 30px;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.playVideo iframe{
+   width:100%; 
+   height: 500px !important;
+}
+
+.playVideo h1{
+   width:100%;
+   font-weight: bold;
+   text-align: center;
+   font-size: 25px;
+   margin-top: 20px;
+}
+
+.selectVid{
+   position: relative;
+}
+.backBtn{
+   position: absolute;
+   top:10px;
+   left:30px;
+}
+
+
+
+.spinner{
+   width:100%;
+   display: flex;
+   padding: 0 50px;
+   align-items: center;
+   justify-content: center;
+}
+
+/* Resposinve design */
+/* wwbContent, wwbImg, wwbtext */
+
+.wwb{ /*site div wrapper */
+   width:100%;
+   display: flex;
+   flex-direction: column;
+   padding: 0 50px;
+}
+
+
+.wwb-TheLordJesusAndTheProphet{
+   display: block;
+}
+.wwb-TheLordJesus{
+   display: none;
+}
+
+/* 100% wide divs */
+
+.w-100{
+  /* this div should not be a child of.wwbContent */
+   width: 100% !important;
+   display: flex;
+   flex-direction: row-reverse;
+
+}
+
+.w-100 *{
+   text-align: center;
+   margin: 50px 0px;
+}
+
+.w-100 h1{
+   font-size: 50px;
+   text-align: center;
+   font-weight: 200;
+}
+
+
+.w-100 .underline{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.PageHeading {
+   width:100%;
+   height: 500px;
+   background-position: center;
+   background-repeat: no-repeat;
+   /* This is the key property for the parallax effect */
+   background-attachment: fixed;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   animation: backgroundSlide 3s ease-in-out 1;
+   background-size: 100% 100%;
+   margin-bottom: 20px;
+}
+
+
+.PageHeading .OverLay{
+   background-color: rgba(0,0,0,0.5);
+   width:100%;
+   height: 100%;
+   position: absolute;
+   z-index: 0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+}
+
+
+.PageHeading h1{ 
+   color:white;
+   text-shadow: 5px 5px 5px black;
+   box-shadow: 0px 10px 10px black;
+   font-size: 100px;
+   padding: 0 50px;
+}
+
+.PageHeading p{
+   width:150px;
+   border-bottom: 2px solid white;
+   background-color: green;
+}
+
+.wwbContent{
+   display: flex;
+   width:100% !important;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+.ReverseFlex{
+   flex-direction: row-reverse;
+}
+
+.wwbContent div{  
+   width:50% !important;
+}
+
+
+.wwbImg{
+   display: flex;
+   align-content: center;
+   justify-content: center;
+}
+
+.wwbImg img{
+   width:80% !important;
+}
+
+.wwbtext{
+   display: flex;
+   flex-direction: column;
+   text-align: left !important;
+}
+
+.wwbtext h3{
+   text-align: left;
+   width:100%;
+}
+
+.theLordtext{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.googleDrive{
+   width:100% !important;
+   height: 450px;
+}
+
+
+
+.mapDiv{
+   margin-top: 50px;
+}
+
+
+/* Who we are */
+.writeUp{
+   display: flex; 
+   width: 100%;
+   flex-wrap: wrap;
+   align-items: center;
+}
+
+.writeUp > div{
+width:50%;
+padding: 10px;
+display: flex;
+flex-wrap: wrap;
+}
+
+.pastors{
+  display: flex !important;
+  justify-content: center;
+  text-align: center !important;  
+}
+
+.pastors p{
+ width:100%;
+ text-align: center !important; 
+}
+
+
+.footerDiv{
+   width: 100% !important;
+   background-color: black;
+   color:white;   
+   padding-bottom: 0px;
+   display: flex;
+   flex-direction: column;
+   row-gap: 45px;
+}
+
+
+.footerDiv  h2{
+   font-size: 30px;
+   margin: 20px 0;
+}
+
+.footerDiv .FooterColumns {
+   background-color: #632b2b;
+   width:100%;
+   padding: 10px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;  
+   flex-wrap: wrap;
+}
+
+.footerDiv .FooterColumns > div{
+   width:32%;
+   justify-content: flex-start;
+   padding: 30px
+}
+
+.FooterColumns div .SubbsribeForm{
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: center;
+   background-color: rgb(229, 237, 245);
+   height: 40px;
+   color:grey;
+   padding: 4px;
+   border-radius: 4px;
+}
+
+.FooterColumns div form input{
+   width:90%;
+}
+
+
+.FooterColumns div > p{
+   background-color: transparent;
+   line-height: 22px;
+   margin-bottom: 10px;
+}
+
+.FooterColumns div form button{
+   margin-left: 2px !important;
+}
+
+.FooterColumns h2{
+   color: white;
+}
+
+.FooterOr{ 
+   margin: 10px 0;
+}
+
+.continueWithGoogle{
+   width:100%;
+   display: flex;  
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.continueWithGoogle a{
+ display: flex;
+ align-items: center;
+ font-weight: bold;
+ background-color:rgb(35, 124, 226);
+ padding: 5px;
+ border-radius: 5px;
+}
+
+.continueWithGoogle > a img{
+   width:40px !important;
+   background-color: white;
+   border-radius: 4px;
+   margin-right: 3px;
+}
+
+
+.whatsAppInputDiv {
+   width:100%;
+   display: flex;
+   align-items: center;
+   margin: 4px 0;
+   padding: 4px;
+   border-radius: 4px;
+   height: 40px;
+   background-color: rgb(229, 237, 245) !important;
+}
+
+.whatsAppInputDiv input{
+   width:100%;
+   min-height: 35px;
+   color:grey;
+}
+
+.linkWhatsAppBtn{
+background-color: #00a93d;
+border: 1px solid #00a93d;
+}
+
+
+.ContactForm {
+   width:100%;
+   padding: 2px;
+   color:grey;
+}
+
+.ContactForm input, .ContactForm textarea{
+   height: 37px;
+   margin: 4px 0;
+   background-color: rgb(229, 237, 245);
+   padding: 3px;
+}
+
+.ContactForm textarea{
+   min-height: 200px;
+   width: 90%;
+}
+
+
+.QuickLinks li a{
+  line-height: 35px;
+  width:100%;
+  border-bottom: 1px solid rgb(229, 237, 245);
+}
+
+.QuickLinks li a:hover{
+   border-style: dashed;
+}
+
+
+.FollowUs li{
+   font-display: flex;
+   background-color: rgba(250,250,250,0.1);
+   align-items: center;
+   margin-top: 4px;
+}
+
+
+
+.FollowUs li:hover{
+   border-bottom: 1px solid white;
+   border-style: dashed;
+}
+
+
+.FollowUs .footer-icon{
+   font-size: 25px;
+   background-color: rgba(250, 250, 250,0.3);
+   padding: 5px;
+   margin-right: 5px;
+}
+
+.FollowUs .footer-icon:hover{
+   border:1px solid white;
+   background-color: transparent;
+}
+
+.FollowUs li a{
+ display: flex;
+ flex-wrap: wrap;
+ font-size: 12px;
+ line-height: 35px;
+}
+
+
+.Copyright{
+   width:100% !important;
+   padding-top: 33px;
+   text-align: center;
+    bottom: 0;
+   display: flex;
+   flex-direction: column;
+   row-gap: 0px;
+   margin-top: -100px;
+}
+
+.Copyright >P{
+   background-color: black;
+   padding: 10px;
+   text-align: center !important;
+   justify-content: center;
+   display: flex;
+}
+
+
+/*
+contactUs
+**************************************
+*/
+.contactUs{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.contactUs table{
+   width: 50%;
+   margin: 0 auto;
+}
+
+.contactLeft{
+   text-align: right;
+   font-weight: bold;
+   width:50%;
+   padding: 10px;
+   padding-right: 5px;
+   border-bottom: 1px solid gray;
+}
+
+.contactRight{
+   width:50%;
+   padding: 10px;
+   text-align: left;
+   padding-left: 5px;
+   border-bottom: 1px solid gray;
+}
+
+.contactLocation{
+   width:100% !important;
+   margin-top: 20px;
+   display: flex;
+   justify-content: center;
+}
+
+/*
+*Sermon grid
+*************************************/
+
+
+.SermonDiv{
+   width:100%;
+   display: flex;
+   flex-wrap: wrap;
+   gap:20px;
+}
+
+
+.sermonExcerpt{
+   margin-top: 10px;
+   margin-bottom: 15px;
+   font-size: 16px;
+   line-height: 22px;
+   text-align: center !important;
+   display: flex;
+   width:100%;
+   align-items: center;
+   justify-content: center;
+}
+
+
+.SermonDiv > div{
+   width:31%; 
+   display: flex;
+   flex-direction: column;
+   box-shadow:0px 5px 5px gray;
+   border:1px solid rgb(207, 204, 204);
+   border-radius: 4px;  
+   text-align: center;
+   padding: 20px 0;   
+}
+
+.gridImg{
+   width:99%;
+   border:1px solid rgb(238, 235, 235);
+}
+
+.sermonGridContent{
+   font-size: 18px;    
+   display: inline-block;
+   width:100% !important;
+   padding: 5px 7px;
+}
+
+
+.sermonTitle{
+   margin-top: 0px;
+}
+
+.sermonTitle h1{
+   margin: 0px;
+   padding: 10px 0;
+   font-weight:bold;
+   line-height: 25px;
+   font-weight: 400;
+   background-color: rgb(219, 219, 219);
+   font-size: 20px;
+}
+
+.youtubeGirdLinks {
+   width:100% !important;
+   display: flex;
+   flex-direction: column;
+   margin-top: 10px;
+   justify-content: center;
+   align-items: center;
+   gap: 3px;
+}
+
+.youtubeGirdLinks button{
+   display: flex;
+   margin-top: 3px;
+}
+
+.accordionNo{
+   font-weight: bold;
+   font-style: italic;
+   border-right: 1px solid black;
+   border-radius: 5px;
+   display: inline-block;
+   width:20px;
+   height: 20px;
+   padding-right: 25px;
+   line-height: 18px;
+}
+
+/*
+*Animations
+=========================================
+*/
+@keyframes activeH2{
+      0% {
+        margin-bottom: -100px;  
+        opacity: 0;  
+      }
+
+      80%{
+         opacity: 0.2;
+      }
+
+     100% {
+      margin-bottom: 0px;  
+      opacity: 1; 
+       }
+}
+
+@keyframes activeContent{
+      0% { 
+        opacity: 0;  
+      }
+
+      80%{
+         opacity: 0.2;
+      }
+
+     100% { 
+      opacity: 1; 
+       }
+}
+
+
+
+ @keyframes backgroundSlide{
+      0% {
+      background-size: 110% 110%;     
+      }
+
+     100% {
+      background-size: 100% 100%;    
+       }
+ }
+
+
+
+
+  @keyframes levitate {
+    0% {
+      transform: translateY(0);
+      }
+
+   50% {
+       transform: translateY(-5px);
+       }
+
+     100% {
+      transform: translateY(0);
+       }
+     }
+
+
+    @keyframes shrinkgrow{
+    0% {
+      width:100%;
+      opacity: 1;
+      }
+
+   50% {
+       width:95%;
+       opacity: 0.9;
+       
+       }
+
+     100% {
+      width:100%;
+      opacity: 1;
+       }
+
+    }
+
+
+
+/* The time of the prophet */
+.subcontent{
+   margin: 3px 20px;
+}
+.subcontent li{
+   color: brown;
+   font-style: italic;
+}
+.subcontent li span{
+   font-weight: bold;
+   font-style: normal;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+ .wrapper{
+   /*common padding for all content wrappers except for the ones we want to have full width */
+   padding: 0 10px;
+ } 
+
+
+ h2{
+   font-size: 40px;
+ }
+
+ .sermonGridContent a h1{
+   font-size: 16px !important;
+ }
+
+
+ .mainMenu {
+   width:100%; 
+   display: flex; 
+   flex-direction: column;
+   justify-content: flex-end; 
+   padding-right: 30px;
+}
+
+.logoDiv {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   position: static; 
+   padding: 0 20px;
+}
+
+.logoDiv a{
+   background-color: transparent;
+   margin-left: -20px;
+}
+
+.logoDiv .menuIcon{
+   display: block;
+   visibility: visible;
+   font-size: 40px;
+   color: white;
+   cursor: pointer;
+   border:1px solid white;
+   border-radius: 5px;
+   padding: 3px;
+}
+
+.mainMenu li:hover > ul{
+   position: absolute;
+   display: block;
+   top:50px;
+   left:30px;
+   z-index: 1000;
+   box-shadow: 2px 2px 2px gray;
+   min-width: 250px;
+}
+
+.wideSreecmenu{
+   display: none;
+}
+
+   h1{
+      font-size: 30px !important;
+   }
+
+.topDiv{
+   display: flex;
+   flex-direction: column;
+   margin-left: 0px;
+   padding-left: 0px;
+}
+
+.topDiv .email{
+   display: none;
+}
+
+.topDiv .topSerach{
+      display: none;
+   }
+
+
+.SliderDiv{ 
+   padding: -100px;
+   margin-top: -60px;
+}
+
+.SliderDiv .swiper-slide-active {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+      
+.slider-div {
+   width:100%;
+   height: auto;
+}
+
+.slider-div .shadowImg{  
+   width:80%;
+   height: 40px; 
+   margin-top: 0px;
+   animation: shrinkgrow 3s ease-in-out infinite;
+}
+
+.sliderCaptions{
+   width:100%;
+   height: auto; 
+   margin-top: 120px;
+}
+
+.sliderCaptions h1{ 
+   margin-top: 10px;
+   font-size: 25px;
+   font-weight: 100; 
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+.sliderCaptions p{
+   width:100% !important;
+   display: flex;
+   justify-content: center;
+   padding-left: 0 35px;
+   margin: 0 10px;
+}
+
+.sliderCaptions button{
+  display: flex; 
+  justify-content: flex-start;
+  line-height: 30px;
+  border-radius: 5px;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+.videoIcon{
+    border:1px solid white; 
+    border-radius: 3px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;  
+    width:30px; 
+    height: 30px;
+}
+
+
+/* Daily Devotion */
+
+.devotion{
+   width:100%;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   color:white;
+   background-position: center;
+   background-repeat: no-repeat;
+   /* This is the key property for the parallax effect */
+   background-attachment: fixed;
+   position: relative;
+   background-size: 100% 100%;
+   margin-bottom: 20px;
+  
+}
+
+.devotion .devotion-title{
+   color: white !important;
+   text-align: center !important;
+   font-weight: bold;
+   margin-top: 0px !important;
+}
+
+.devotion > div{
+   display: flex;
+   padding:20px 0;
+}
+
+.devotion >  div > div{
+   width:100% !important;
+}
+
+.devotion blockquote{
+   font-size: 1rem;
+   line-height: 1.9rem;
+   padding-right:20px !important;
+   padding-left: 20px !important;
+   display: block;
+   padding-left: 6px;
+}
+
+.devotion-btn{
+     line-height: 1.3rem !important;
+     padding-left:2px;
+     padding-right: 2px;
+}
+
+
+.playVideo {
+   width:100% !important;
+}
+.playVideo iframe{
+   width:100vw !important; 
+   height: 350px !important;
+}
+
+.playVideo h1{
+   font-weight: 18px !important;
+}
+  
+.backBtn{
+   top:-10px;
+   right:30px;
+}
+
+.wwb{
+margin-top: 10px !important;
+}
+
+.wwb-TheLordJesusAndTheProphet{
+   display: none;
+}
+.wwb-TheLordJesus{
+   margin-top: 20px;
+   display: block;
+}
+
+.wwbContent{
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column-reverse !important;
+}
+
+.wwbContent div{
+   width:100% !important;
+}
+
+.wwbImg img{
+   width:400px !important;
+}
+
+.ReverseFlex{
+   flex-direction: row;
+}
+
+
+/* writeup */
+/* ========================================================== */
+.writeUp > div{
+   width:100%;
+   padding: 10px;
+}
+
+.pastors img{
+   height: auto;
+}
+
+.pastors p{
+   font-size: 13px;
+}
+
+
+
+.PageHeading {
+   width:100%;
+   height: 300px;
+   margin-bottom: 5px;
+}
+
+
+
+.programPage .programDiv{
+   width:49% !important;
+   margin: 1%;
+}
+
+
+/*Sernon grid*/
+.SermonDiv > div{
+   width:30%;
+}
+
+
+.progDiv > div{
+   width:100%; 
+   display: flex;
+   flex-wrap: wrap;
+   border:1px solid black;
+}
+
+ .progDiv h3{
+     font-size:25px;
+     text-align: left !important;
+ }
+
+  .progDiv p{
+    text-align: left !important;
+ }
+
+
+.progDiv > div >div{
+   width:100%; 
+   flex-wrap: wrap;
+   text-align: left;
+}
+.progDiv > div >div p{
+   width:100% !important;
+   display: block;
+}
+
+
+}
+
+
+
+
+@media only screen and (max-width: 764px) {
+
+/* top menu and  logo */
+
+.Header {
+   width: 100%; 
+   position: static;
+   padding: 5px 2px;
+   background-color: #1799cc;
+}
+
+.mainMenu {
+   background-color: #C63233;
+   margin-top: 20px;
+}
+
+.mobileMenu{
+   color:#C63233 !important;
+}
+
+.mobileMenu a{
+   border-bottom: 1px solid white;
+}
+
+.logoDiv img{
+   position: absolute;
+   z-index: 5000;
+   width:70px;
+}
+
+.logoDiv a{
+   background-color: transparent;
+    display: inline-block;
+   width:80%;
+ }
+
+ .logoDiv a img{
+   position: absolute;
+   top:1px; 
+   left: 10px;
+ }
+
+.topDiv{
+   background-color: white;
+}
+
+h2, h3{
+   text-align: center !important;
+}
+
+.underline {
+   display: flex;
+   justify-content: center !important;
+}
+
+.underline p{
+   justify-content: center;
+}
+
+/*sermon grid and slider */
+.showGrid{
+   display: none;
+}
+
+.showSlider{
+   display: block;
+   margin-top: -50px !important;
+}
+
+/*Pages headin*/
+.PageHeading {
+   width:100%;
+   height: auto;
+   height: 200px;
+   background-size: 120% 270px !important;
+   background-position-y: 2px;
+   margin-bottom: 5px;
+   
+}
+
+.PageHeading h1{ 
+   font-size: 30px !important;
+   padding: 0px 10px;
+   text-shadow: 0px 2px 2px black;
+   box-shadow: none;
+}
+
+.programPage{
+   justify-content: center;
+}
+
+.programPage .programDiv{
+   width:100% !important;
+   margin: 1%;
+}
+
+
+.footerDiv .FooterColumns > div{
+   width:100%;
+   padding: 10px;
+   justify-content: flex-start;
+}
+
+.footerDiv h2{
+   margin-top: -20px;
+   text-align: left !important;
+}
+
+.QuickLinks{
+   margin-bottom: 30px;
+}
+
+.ContactForm {
+   padding: 0px;
+}
+
+.ContactForm input, .ContactForm textarea{
+   width:100% !important;
+}
+
+
+.contactUs table{
+   width: 100%;
+   margin: 0 auto;
+}
+
+.wwbImg{
+  margin: 30px 0px -30px 10px !important;
+}
+
+.wwbImg img{
+   width:250px !important;
+}
+
+
+/*Sernon grid*/
+.SermonDiv > div{
+   width:100%;
+}
+
+
+.homeSlider{
+   background-size: 200% 200%;
+   overflow: hidden;
+}
+.homeSlider img{
+   width:150% !important;
+   height: 490px;
+}
+
+.homeSliderContent p{
+   max-height: 80px;
+   font-size: 19px;
+   line-height: 25px;
+   overflow: hidden;
+   margin: 10px 0;
+}
+
+.homeSliderContent{
+   padding: 30px 10px;
+}
+ .homeSliderContent h1, .homeSliderContent h3{
+   display: none;
+}
+
+.homeSliderContent h2 a{
+   font-size: 40px !important;
+   margin-bottom: -40px;
+}
+
+
+.homeSliderContent a button{
+   font-size: 16px;
+   margin: 0px;
+   padding: 7px 10px;
+}
+
+
+.homeBanner .swiper-button-prev, .homeBanner .swiper-button-next{
+   background-color: rgba(0,0,0,0.2) !important;
+   padding: 30px;
+}
+
+
+
+/* Prevent animation */
+.swiper-slide-active h2 a{
+  animation:  none !important;
+}
+
+
+.swiper-slide-active .homeSliderContent p {
+  animation:  none !important;
+}
+
+
+.swiper-slide-active .homeSliderContent button {
+  animation:  none !important;
+}
+
+
+.swiper-slide-active .homeSliderContent .underline {
+  animation: none !important;
+}
+
+
+/*newsletter */
+.newsletter{
+   flex-direction: column;
+   padding: 50px 0;
+   justify-content: center;
+   align-items: center;
+}
+.newsletter > div{
+   width: 100% !important;
+   display: flex;
+   justify-content: center;
+   padding: 10px 0;
+}
+
+
+
+/* missionary grid */
+
+.middion-grid{
+   margin-top: 20px;
+}
+
+.middion-grid > div{
+   width:100%;
+   padding: 30px;
+}
+
+.mission-images img{
+     width:90%;
+}
+
+.mission-body{
+   padding-left: 0px;
+   padding-right: 0px;
+}
+
+
+.letterview > div > div {
+   width:100%;
+   flex-direction: column !important;
+}
+
+.letterview > div > div *{
+ text-align: center !important;
+}
+
+.letterThumb{
+   display: flex;
+   flex-direction: column;
+   width:100% !important;
+   justify-content: center;
+   align-items: center;
+}
+
+.letterThumb img{
+   width:100px;
+}
+.letterContent{
+   width:100% !important;
+}
+
+.letterLink{
+   margin-top: 30px;
+   display: flex;
+   width:100%;
+   justify-content: center;
+}
+
+.letterH3Home{
+   text-align: center !important;
+}
+
+
+.newsletter .letterTitleDiv{
+   width: 100%;
+}
+
+.newsletter .letterButtonDiv{
+   width: 100%;
+   justify-content: center;
+   padding-left: 0px;
+}
+
+}
